@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contact/contact.css"/>
+    <link rel="shortcut icon" href="images/logo.png">
+</head>
+<body>
+    <div class="preloader">
+        <div class="writing-loader">
+            <h1>EV</h1>
+            <p1>EV is getting ready for being contacted</p1>
+        </div>
+        <div class="loader">
+            <div class="loader-inner">
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+                <div class="loader-line-wrap">
+                    <div class="loader-line"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="landing-page" id="landing-page">
+        <div class="navbar">
+            <div class="menu">
+               <div class="logo" id="logo"></div>
+              <h3 class="logo" id="logo">EV<span>eryone</span></h3>
+              <div class="links">
+              <nav>
+                <ul>
+                   <li><a href="index.html">Home</a></li>
+                   <li><a href="privacy.html">Privacy Policy</a></li>
+                   <div class="cursor"></div>
+                </ul>
+                <script>
+                    const cursor = document.querySelector('.cursor');
+                    document.addEventListener('mousemove', (e) => {
+                        cursor.style.left = e.pageX + 'px';
+                        cursor.style.top = e.pageY + 'px';
+                    })
+                </script>
+              </nav>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="row">
+            <div class="col">
+                <ul id="enviroment">
+                    <h1>C<span>ontact</span></h1>
+                </ul id="vision">
+                 <h1>U<span>s</span></h1>
+
+             <div class="info">
+                  <a class="link" href="mailto:innovationclubdhairya@gmail.com">Leave Us A Mail</a>
+                </div>
+
+                 
+            </div>
+        </div>
+
+    
+
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script>
+              setTimeout(function(){
+                  $('.preloader').fadeToggle();
+              }, 3000);
+            </script>
+      
+          <script src="tilt.jquery.js"></script>
+      
+          
+          <script src="animations.js"></script>
+      
+          <script>
+           const tilt = $('.box').tilt({scale:1.01});
+          </script>
+    
+</body>
+</html>
