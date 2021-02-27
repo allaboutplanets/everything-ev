@@ -1,0 +1,576 @@
+html{
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    src: url(fonts/AlphaCentauri.ttf);
+    font-family: "AlphaCentauri";
+}
+
+@font-face {
+    src: url(/fonts/TESLA.ttf);
+    font-family: "tesla";
+}
+
+.preloader{
+    position: fixed;
+    z-index: 999999;
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+}
+
+.writing-loader{
+    font-family: AlphaCentauri;
+    font-size: 20px;
+    color:#fff;
+    padding-top: 100px;
+    padding-left: 600px;
+}
+
+.preloader::after, .preloader::before {
+    content:'';
+}
+
+.container {
+    position: absolute;
+    top: 60vh;
+    left: 720px;
+    width: 14px;
+    height: 50px;
+}
+
+.header {
+    position: absolute;
+    width: 26px;
+    height: 10px;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -10px);
+    border-radius: 5px 5px 0 0;
+    background: rgba(255, 255, 255, .88);
+}
+
+.battery-copy {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 14px;
+    border-radius: 15px 15px 5px 5px;
+    overflow: hidden;
+}
+
+.battery {
+    position: relative;
+    height: 220px;
+    width: 100px;
+    box-sizing: border-box;
+    border-radius: 15px 15px 5px 5px;
+    box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.22);
+    background: #fff;
+    z-index: 1;
+}
+    
+    
+.battery::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 80%;
+        background: linear-gradient(to bottom, #7abcff 0%, #00BCD4 44%, #2196F3 100%);
+        border-radius: 0px 0px 5px 5px;
+        box-shadow: 0 14px 28px rgba(33, 150, 243, 0), 0 10px 10px rgba(9, 188, 215, 0.08);
+        animation: charging 3s linear ;
+        filter: hue-rotate(90deg);
+}
+
+.g-wave {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, .8);
+    border-radius: 45% 47% 44% 42%;
+    bottom: 25px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 1;
+    animation: move 10s linear infinite;
+}
+
+.g-wave:nth-child(2) {
+    border-radius: 38% 46% 43% 47%;
+    transform: translate(-50%, 0) rotate(-135deg);
+}
+
+.g-wave:nth-child(3) {
+    border-radius: 42% 46% 37% 40%;
+    transform: translate(-50%, 0) rotate(135deg);
+}
+
+@keyframes charging {
+	50% {
+        box-shadow: 0 14px 28px rgba(0, 150, 136, 0.83), 0px 4px 10px rgba(9, 188, 215, 0.4);
+    }
+    
+    95% {
+        top: 5%;
+        filter: hue-rotate(0deg);
+        border-radius: 0 0 5px 5px;
+        box-shadow: 0 14px 28px rgba(4, 188, 213, .2), 0 10px 10px rgba(9, 188, 215, 0.08);
+    }
+    100% {
+        top: 0%;
+        filter: hue-rotate(0deg);
+        border-radius: 15px 15px 5px 5px;
+        box-shadow: 0 14px 28px rgba(4, 188, 213, 0), 0 10px 10px rgba(9, 188, 215, 0.4);
+    }
+}
+
+@keyframes move {
+    100% {
+        transform: translate(-50%, -160px) rotate(720deg);
+    }
+}
+
+.preloader::backdrop{
+    animation: ease-in-out 20s;
+    opacity: 0%;
+}
+
+.preloader::after{
+    animation: ease-in-out 20s;
+    opacity: 0%;
+}
+
+.preloader::before{
+    animation-delay: 0.5s;
+    opacity: 0%;
+}
+
+
+
+* {
+    padding: 0%;
+    margin: 0%;
+}
+
+
+body{
+    background-color: #000;
+    z-index: 1;
+}
+.landing-page{
+    position: relative;
+    z-index: 1;  
+    background-color: transparent;
+}
+
+.video{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 100vh;
+    width: 100%;
+}
+
+.video video{
+    width: 100%;
+}
+
+
+::-webkit-scrollbar{
+    width: 12px;
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(#000,rgb(255, 255, 255));
+    border-radius: 30px;
+    width: 10px;
+    height: 10px;
+}
+
+.foot-line{
+    position: absolute;
+    top: 7980px;
+    left: '';
+    background-color: #000;
+}
+
+.navbar {
+    z-index: 2;
+    background: transparent;
+}
+.links {
+    z-index: 3;
+    background: transparent;
+}
+
+.menu {
+    z-index: 3;
+    background: transparent;
+}
+
+.title{
+    background-color: transparent;
+}
+
+.title h1{
+    background-color: transparent;
+}
+
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(0, 0, 0) ;
+    background-position: center;
+    background-size: cover;
+    overflow-x: hidden;
+    transform-style: preserve-3d;
+} 
+
+.cursor{
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    transition: 0.1s;
+    z-index: 999;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+    mix-blend-mode: difference;
+
+}
+
+.navbar {
+    height: 12%;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    background-color: #000;
+    z-index: 10;
+    padding-top: 20px;
+}
+
+.menu {
+    max-width: 72rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding-left: 4px;
+}
+
+.main {
+    position: relative;
+    width: 100%;
+    left: 0;
+    z-index: 5;
+    overflow: hidden;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+}
+
+.logo{
+        font-size: 30px;
+        font-family: AlphaCentauri;
+        width: 80px;
+        cursor: pointer;
+        position: fixed;
+        top: 10px;
+        left: 20px;
+}
+
+
+.logo h1 {
+    font-size: 20px;
+    font-family: AlphaCentauri;
+    width: 80px;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    left: 20px;
+} 
+.privacy-policy{
+    padding: 40px;
+    color: #fff;
+    align-items: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    position: center;
+}
+
+
+.logo a:hover{
+    font-weight: 50px;
+    transform: rotate3d(-12deg);
+}
+
+.links li:hover ~ .cursor{
+    transform: scale(3);
+}
+.logo span{
+    font-size: small;
+}
+
+nav {
+    padding-left: 600px;
+    padding-bottom: 40px;
+    align-items: right;
+    flex: 1;
+    text-align: right;
+    padding-right: 70px;
+    font-family: "Alphacentauri";
+    background-color: #000;
+}
+
+.links {
+    text-decoration: none;
+    background-color: transparent;  
+}
+  
+.links a:hover {
+    color: rgb(255, 0, 0);
+    font-size: 15px;
+    animation: ease-in-out;
+    font-weight: 200px;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+
+nav ul li a {
+    text-decoration: none;
+    color:#fff;
+    font-size: 13px;
+}
+
+.row{
+    display: flex;
+    height: 80%;
+    align-items: center;   
+    color: #fff;
+    padding-left: 40px;
+    text-decoration: none;
+}
+
+
+h1{
+    font-size: 200px;
+    font-weight: 20px;
+    font-family: AlphaCentauri;
+    padding-left: 40px;
+    background-color: #000;
+}
+
+.subheading{
+    display: flex;
+    height: 80%;
+    align-items: center;   
+    color: #fff;
+    padding-left: 40px;
+}
+
+.col{
+    text-decoration: none;
+    color: #fff;
+    padding-left: 350px;
+}
+
+.col span{
+    font-size: 40px;
+    font-weight: 10px;
+    font-family: AlphaCentauri;
+    text-decoration: none;
+}
+
+.col span a:hover{
+    color: firebrick;
+    animation: 3s ease-in-out;
+}
+.box1{
+    position: absolute;
+    top: 78px;
+    left: 700px;
+    font-size: 1.2rem;
+    background: transparent;
+}
+
+.col{
+    flex-basis: 50%;
+    text-decoration: none;
+}
+
+
+.foot-line{
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    position: absolute;
+    top: 465vh;
+    color: #fff;
+    font-family: AlphaCentauri;
+    font-size:8px;
+    padding-left: 600px;
+    padding-bottom: 20px;
+    padding-right: auto;
+
+}
+
+.heading1{
+    font-size: 20px;
+    color: white;
+    position: center;
+    font-family: AlphaCentauri;
+    padding-left: 400px;
+    padding-top: 42px;
+    padding-bottom: 40px;
+}
+
+.title h1{
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 300px;
+    color: white;
+    font-family: AlphaCentauri;
+    position: fixed;
+    top: 100px;
+}
+
+.title .span{
+    color:#ff0000;
+    font-weight: 2000px;
+    font-size: 170px;
+}
+
+.title .span1{
+    position: absolute;
+    top: 50vh;
+    left: 260px;
+    color:#ff0000;
+    font-weight: 2000px;
+    font-size: 170px;
+}
+
+.text{
+    position: absolute;
+    top: 110vh;
+    left: 0%;
+    width: 100%;
+    height: 350vh;
+    background: linear-gradient(rgb(255, 255, 255),rgb(255, 255, 255));
+    z-index: 100000;
+}
+
+.text .writing {
+    padding: 50px;
+    display: grid;
+    color: black;
+}
+
+@font-face{
+    src: url(/fonts/OpenDyslexicAlta-Bold.otf);
+    font-family: custom;
+}
+
+
+.text .writing h4{
+    align-items: center;
+    font-size: 40px;
+    font-family: custom;
+    justify-items: center;
+    display: flex;
+}
+
+.text .writing h1{
+    align-items: center;
+    font-size: 50px;
+    font-family: custom;
+    justify-items: center;
+    padding-left: 100px;
+    padding-bottom: 30px;
+    display: flex;
+    background-color: transparent;
+}
+
+.image{
+    position: absolute;
+    opacity: 1;
+    visibility: visible;
+    top: 130vh;
+    left: 500px;
+}
+
+.image1{
+    position: absolute;
+    opacity: 1;
+    visibility: visible;
+    top: 69vh;
+    left: 500px;
+    z-index: 1;
+}
+
+.image2{
+    position: absolute;
+    opacity: 1;
+    visibility: hidden;
+    top: 76vh;
+    left: 500px;
+    z-index: 1;
+}
+
+.image1:hover{
+    opacity: 0;
+    visibility: hidden;
+    transition: 2s ease-in-out smooth;
+    transition-delay: 1s;
+}
+
+.image1:hover ~ .image2{
+    opacity: 1;
+    visibility: visible;
+    transition: 2s ease-in-out smooth;
+    transition-delay: 1s;
+}
+
+.instruction{
+    position: absolute;
+    top: 72vh;
+    left: 500px;
+}
+
+.image3{
+    position: absolute;
+    opacity: 1;
+    visibility: visible;
+    top: 180vh;
+    left: 500px;
+    z-index: 1;
+}
+
+.charge{
+    padding-top: 300vh;
+    left: 600px;
+}
+
+.image4{
+    position: absolute;
+    opacity: 1;
+    visibility: visible;
+    top: 280vh;
+    left: 500px;
+    z-index: 1;
+}

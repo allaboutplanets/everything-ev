@@ -1,0 +1,936 @@
+html{
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    src: url(fonts/AlphaCentauri.ttf);
+    font-family: "AlphaCentauri";
+}
+
+.preloader{
+    position: fixed;
+    z-index: 999999;
+    background-color: #000;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+
+
+.preloader:before{
+    content: 'EV is loading..';
+    position: absolute;
+    font-size: 9.2em;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-family: AlphaCentauri;
+    color: #fff;
+}
+
+.counter{
+    position: relative;
+    color: #fff;
+    font-size: 16em;
+    z-index: 1;
+    top: 180px;
+}
+
+.counter:after{
+    content: '%';
+    font-size: 0.5em;
+}
+
+.counter .hide{
+    opacity: 0;
+    transition: 1s;
+    pointer-events: none;
+}
+
+.hide{
+    opacity: 0;
+    transition: 1s;
+    pointer-events: none;
+}
+
+.active{
+    transform: translateY(-100vh);
+    transition: ease-in-out 2s;
+    transition-delay: 1s;
+}
+
+
+
+* {
+    background-color: #000;
+    padding: 0%;
+    margin: 0%;
+}
+
+::-webkit-scrollbar{
+    width: 12px;
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(#000,rgb(255, 255, 255));
+    border-radius: 30px;
+    width: 10px;
+    height: 10px;
+}
+
+.landing-page{
+    position: relative;
+    z-index: 1;  
+    height: 100vh;
+    background-color: transparent;
+    background: linear-gradient(to bottom rgba(78, 75, 75, 0.973),rgb(0, 0, 0)) url(images/background-video.mp4);
+}
+
+.navbar .menu .logo{
+    color: #fff;
+}
+
+.ision{
+    position: absolute;
+    top: 500px;
+    left: 180px;
+}
+
+.video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom rgba(78, 75, 75, 0.212),rgba(0,0,0,0.1));
+    background-blend-mode: multiply;
+
+}
+
+.video video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    pointer-events: none;
+    background: linear-gradient(to bottom rgba(78, 75, 75, 0.212),rgba(0,0,0,0.1));
+    background-blend-mode: multiply;
+}
+
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(0, 0, 0) ;
+    background-position: center;
+    background-size: cover;
+    overflow-x: hidden;
+    transform-style: preserve-3d;
+    z-index: 1;
+} 
+
+.cursor{
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    transition: 0.2s;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: difference;
+}
+
+.navbar {
+    height: 12%;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    z-index: 10;
+    background: transparent;
+    
+}
+
+.menu {
+    max-width: 72rem;
+    width: 100%;
+    margin: 0 ;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    background: transparent;
+}
+
+.main {
+    position: relative;
+    width: 100%;
+    left: 0;
+    z-index: 5;
+    overflow: hidden;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    background: transparent;
+}
+
+.logo{
+        font-size: 30px;
+        font-family: AlphaCentauri;
+        width: 80px;
+        cursor: pointer;
+        position: fixed;
+        top: 10px;
+        left: 20px;
+        background: transparent;
+}
+
+
+.logo h1 {
+    font-size: 20px;
+    font-family: AlphaCentauri;
+    width: 80px;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    background: transparent;
+} 
+
+.logo a:hover{
+    font-weight: 50px;
+    transform: rotate3d(-12deg);
+}
+
+.links li:hover ~ .cursor{
+    transform: scale(1000);
+    transition: 9s ease-in-out;
+}
+
+.logo span{
+    font-size: small;
+    background: transparent;
+}
+
+
+nav {
+    position: absolute;
+    left: 1100px;
+    padding-bottom: 40px;
+    align-items: right;
+    flex: 100;
+    text-align: right;
+    font-family: "Alphacentauri";
+    background-color: transparent;
+}
+
+.links {
+    text-decoration: none;
+    background-color: transparent; 
+}
+  
+.links a:hover {
+    color: rgb(255, 0, 0);
+    animation: 20s linear;
+    font-weight: 200px;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 20px;
+    background-color: transparent;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    background-color: transparent;
+}
+
+.row{
+    display: flex;
+    height: 80%;
+    align-items: center;   
+    color: #fff;
+    padding-left: 40px;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+
+.landing-page .row .col h1{
+    font-size: 200px;
+    font-weight: 20px;
+    font-family: AlphaCentauri;
+    padding-left: 40px;
+    background-color: transparent;
+}
+
+
+.col span{
+    font-size: 40px;
+    font-weight: 10px;
+    font-family: AlphaCentauri;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.box {
+    width: 300px;
+    height: 280px;
+    display: inline-block;
+    padding: 25px;
+    border-radius: 10px;
+    align-items: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 15px 15px;
+    background-color: #ffffff56;
+    background-position: center;
+    backdrop-filter: blur(-20%);
+    font-family: AlphaCentauri;
+    border: white;
+    border-style: solid;
+}
+
+.box1{
+    background: rgba(255, 255, 255, 0.637) url(e-images/scientific.jfif);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.box2{
+    background-image: url(e-images/development.webp);
+    background-position: fill;
+}
+
+.box3{
+    background-image: url(e-images/manufacturing.jpg);
+    background-position: fill;
+}
+
+.box4{
+    background-image: url(e-images/maintance.jpg);
+    background-position: bottom;
+}
+
+
+.col1 .box:hover .Exciting-variants{
+    opacity: 1;
+    visibility: visible;
+    transition: ease-in-out;
+    transition-delay: 0.2s;
+}
+
+.box a:hover{
+    width: 330px;
+    height: 310px;
+    animation: ease-in-out;
+}
+
+.box h5{
+    background: rgba(255, 255, 255, 0.774);
+    color: #000;
+    outline: white;
+    font-size: 26px;
+    position: center;
+    justify-items: center;
+    align-items: center;
+    place-items: center;
+    text-align: center;
+}
+
+.foot-line{
+    position: absolute;
+    top: 1940vh;
+    align-items: center;
+    color: #fff;
+    font-family: AlphaCentauri;
+    font-size:8px;
+    padding: auto;
+    padding-left: 550px;
+    background-color: transparent;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    padding-right: auto;
+
+}
+
+.heading1{
+    font-size: 20px;
+    color: white;
+    position: center;
+    font-family: AlphaCentauri;
+    padding-left: 400px;
+    padding-top: 42px;
+    padding-bottom: 40px;
+    background-color: transparent;
+}
+
+
+.col1 .box .Exciting-variants{
+    position: absolute;
+    top: 260px;
+    bottom: 20;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,0,75px);
+    color: #fff;
+    background: #333;
+    padding: 10px 12px;
+    border-radius: 30px;
+    text-decoration: none;
+    text-decoration-color: none;
+    transition: o.5s;
+    behavior: smooth;
+    opacity: 0;
+    size: 20px;
+}
+
+.col1 .box .Exciting-variants:hover{
+    content: '';
+    width: fit-content;
+    height: max-content;
+}
+
+.row .col{
+    background-color: transparent;
+}
+.row .col .enviroment{
+    background-color: transparent;
+}
+
+.col1{
+    background-color: transparent;
+    padding-left: 200px;
+
+}
+ul{
+    background-color: transparent;
+}
+
+
+/*----------------------------------------------------------------------------------SR-------------------------------------------------------------------------------*/
+.sec:nth-child(1){
+    background: rgba(255, 255, 255, 0.897) url(e-images/scientific.jfif);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-blend-mode: multiply;
+}
+
+.sec:nth-child(2){
+    background: rgba(0, 0, 0, 0.692) url(e-images/research.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-blend-mode: multiply;
+}
+
+.sec{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background: transparent;
+}
+
+.content{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    background: transparent;
+}
+
+.content h2{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background: transparent;
+}
+
+.content h2 span{
+    position: sticky;
+    top: 0;
+    line-height: 100vh;
+    background: transparent;
+    height: 100vh;
+    color: #fff;
+    font-size: 8vw;
+    font-family: custom;
+    word-spacing: 200px;
+    margin-top: calc(100vh * var(--i));
+}
+
+@font-face{
+    src: url(/fonts/OpenDyslexicAlta-Bold.otf);
+    font-family: custom;
+}
+
+
+.sr img{
+    width: 100%;
+    background-image: cover;
+    height: 150%;
+    background: linear-gradient(rgba(255, 255, 255, 0),#fff);
+}
+
+.content-list .ullist{
+    padding-left: 30px;
+    color: #ff0;
+    background: transparent;
+}
+
+.sr .content-list h1{
+    position: absolute;
+    left: 250px;
+    top: -150px;
+    background: transparent;
+    font-size: 100px;
+    font-weight: 500;
+    font-family: custom;
+
+}
+
+
+
+.sr .content-list {
+    position: absolute;
+    top: 312vh;
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    padding-right: 1000px;
+    font-size: 30px;
+    color: white;
+    font-family: custom;
+}
+
+
+/*----------------------------------------------------------------------------D&D--------------------------------------------------------------------------------------*/
+
+.sec2:nth-child(1){
+    background: rgba(255, 0, 0, 0.616) url(e-images/design.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-blend-mode: multiply;
+}
+
+.sec2:nth-child(2){
+    background: rgba(0, 255, 21, 0.616) url(e-images/and.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-blend-mode: multiply;
+}
+
+.sec2:nth-child(3){
+    background: rgba(0, 47, 255, 0.692) url(e-images/development.webp);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-blend-mode: multiply;
+}
+
+.sec2{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background: transparent;
+}
+
+.content2{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    background: transparent;
+}
+
+.content2 h2{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background: transparent;
+}
+
+.content2 h2 span{
+    position: sticky;
+    top: 0;
+    line-height: 100vh;
+    background: transparent;
+    height: 100vh;
+    color: #fff;
+    font-size: 5vw;
+    word-spacing: 200px;
+    font-family: custom;
+    word-spacing: 200px;
+    margin-top: calc(100vh * var(--i));
+}
+.content-list2 li{
+    background: transparent;
+}
+
+.content-list2 .ullist2{
+    padding-left: 30px;
+    color: #ff0;
+    background: transparent;
+}
+
+.sr2 img{
+    width: 100%;
+    background-image: cover;
+    height: 100%;
+    background: linear-gradient(rgba(255, 255, 255, 0),#fff);
+}
+
+.sr2 .content-list2 h1{
+    position: absolute;
+    left: '';
+    top: -150px;
+    background: transparent;
+    font-size: 100px;
+    font-weight: 500;
+    font-family: custom;
+
+}
+
+.sr2 .content-list2 {
+    position: absolute;
+    top: 735vh;
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    padding-right: 800px;
+    font-size: 25px;
+    color: white;
+    font-family: custom;
+}
+
+/*------------------------------------------------------------------------Manufacturing--------------------------------------------------------------------------------*/
+
+.sec3:nth-child(1){
+    background: rgba(255, 0, 0, 0.616) url(e-images/manufacturing.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-blend-mode: multiply;
+}
+
+.sec3:nth-child(2){
+    background: rgba(0, 255, 21, 0.616) url(e-images/progress.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-blend-mode: multiply;
+}
+
+.sec3{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background: transparent;
+}
+
+.content3{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    background: transparent;
+}
+
+.content3 h2{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background: transparent;
+}
+
+.content3 h2 span{
+    position: sticky;
+    top: 0;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    line-height: 100vh;
+    background: transparent;
+    height: 100vh;
+    color: #fff;
+    font-size: 5vw;
+    word-spacing: 200px;
+    font-family: custom;
+    word-spacing: 200px;
+    margin-top: calc(100vh * var(--i));
+}
+.content-list3 li{
+    background: transparent;
+}
+
+.content-list3 .ullist3{
+    padding-left: 30px;
+    color: #ff0;
+    background: transparent;
+}
+
+.sr3 img{
+    width: 100%;
+    background-image: cover;
+    height: 100%;
+    background: linear-gradient(rgba(255, 255, 255, 0),#fff);
+}
+
+.sr3 .content-list3 h1{
+    position: absolute;
+    left: '';
+    top: -150px;
+    background: transparent;
+    font-size: 100px;
+    font-weight: 500;
+    font-family: custom;
+
+}
+
+.sr3 .content-list3 {
+    position: absolute;
+    top: 1055vh;
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    padding-right: 800px;
+    font-size: 25px;
+    color: white;
+    font-family: custom;
+}
+
+
+/*------------------------------------------------------------------------Matance and skills--------------------------------------------------------------------------------*/
+
+.sec4:nth-child(1){
+    background: rgba(17, 0, 255, 0.616) url(e-images/maintance.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-blend-mode: multiply;
+}
+
+.sec4:nth-child(2){
+    background: rgba(255, 0, 191, 0.616) url(e-images/and2.gif);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-blend-mode: multiply;
+}
+
+.sec4:nth-child(3){
+    background: rgba(255, 0, 191, 0.616) url(e-images/skill.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-blend-mode: multiply;
+}
+
+
+.sec4{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background: transparent;
+    padding-top: 400px;
+}
+
+.content4{
+    background: transparent;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.content4 h2{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background: transparent;
+}
+
+.content4 h2 span{
+    position: sticky;
+    top: 0;
+    line-height: 100vh;
+    background: transparent;
+    height: 100vh;
+    color: #fff;
+    font-size: 5vw;
+    word-spacing: 200px;
+    font-family: custom;
+    margin-top: calc(100vh * var(--i));
+}
+
+.sr4 img{
+    width: 100%;
+    background-image: cover;
+    height: 100%;
+}
+
+.sr4 .content-list4 h1{
+    position: absolute;
+    top: -150px;
+    background: transparent;
+    font-size: 75px;
+    font-weight: 500;
+    font-family: custom;
+    color: #fff;
+}
+
+.content-list4 .ullist4{
+    padding-left: 30px;
+    color: #ff0;
+    background: transparent;
+}
+
+.sr4 .content-list4 {
+    position: absolute;
+    top: 1640vh;
+    background: transparent;
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    padding-right: 900px;
+    font-size: 22px;
+    font-family: custom;
+    color: #fff;
+}
+
+
+
+
+/*------------------------------------------------------------------------Infastruture--------------------------------------------------------------------------------*/
+
+.sec5:nth-child(1){
+    background: rgba(17, 0, 255, 0.616) url(e-images/infastructure.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-blend-mode: multiply;
+}
+
+
+.sec5{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background: transparent;
+}
+
+.content5{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    background: transparent;
+}
+
+.content5 h2{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background: transparent;
+}
+
+.content5 h2 span{
+    position: sticky;
+    top: 0;
+    line-height: 100vh;
+    background: transparent;
+    height: 100vh;
+    color: #fff;
+    font-size: 5vw;
+    word-spacing: 200px;
+    font-family: custom;
+    margin-top: calc(100vh * var(--i));
+}
+
+.sr5 img{
+    position: absolute;
+    top: 13312px;
+    width: 100%;
+    background-image: cover;
+    height: 100%;
+}
+.sr5 .content-list5 li{
+    background: transparent;
+}
+
+.sr5 .content-list5 h1{
+    position: absolute;
+    left: '';
+    top: -150px;
+    background: transparent;
+    font-size: 100px;
+    font-weight: 500;
+    font-family: custom;
+    color: #fff;
+}
+
+.content-list5 .ullist5{
+    padding-left: 30px;
+    color: #ff0;
+    background: transparent;
+}
+
+.sr5 .content-list5 {
+    position: absolute;
+    top: 13450px;
+    background: transparent;
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    padding-right: 900px;
+    font-size: 22px;
+    font-family: custom;
+    color: #fff;
+}

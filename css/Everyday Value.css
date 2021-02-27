@@ -1,0 +1,3613 @@
+@font-face {
+    src: url(fonts/AlphaCentauri.ttf);
+    font-family: "AlphaCentauri";
+}
+
+@font-face {
+    src: url(/fonts/TESLA.ttf);
+    font-family: "tesla";
+}
+
+.preloader{
+    position: fixed;
+    z-index: 999999;
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+}
+
+.writing-loader{
+    font-family: AlphaCentauri;
+    font-size: 20px;
+    color:#fff;
+    padding-top: 100px;
+    padding-left: 600px;
+}
+
+.preloader::after, .preloader::before {
+    content:'';
+}
+
+.loader-inner {
+    bottom: 0;
+    height: 60px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+}
+
+.loader-line-wrap {
+    animation: 
+		spin 2000ms cubic-bezier(.175, .885, .32, 1.275) infinite
+	;
+    box-sizing: border-box;
+    height: 50px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    transform-origin: 50% 100%;
+    width: 100px;
+}
+.loader-line {
+    border: 4px solid transparent;
+    border-radius: 100%;
+    box-sizing: border-box;
+    height: 100px;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+}
+.loader-line-wrap:nth-child(1) { animation-delay: -50ms; }
+.loader-line-wrap:nth-child(2) { animation-delay: -100ms; }
+.loader-line-wrap:nth-child(3) { animation-delay: -150ms; }
+.loader-line-wrap:nth-child(4) { animation-delay: -200ms; }
+.loader-line-wrap:nth-child(5) { animation-delay: -250ms; }
+
+.loader-line-wrap:nth-child(1) .loader-line {
+    border-color: hsl(0, 80%, 60%);
+    height: 90px;
+    width: 90px;
+    top: 7px;
+}
+.loader-line-wrap:nth-child(2) .loader-line {
+    border-color: hsl(60, 80%, 60%);
+    height: 76px;
+    width: 76px;
+    top: 14px;
+}
+.loader-line-wrap:nth-child(3) .loader-line {
+    border-color: hsl(120, 80%, 60%);
+    height: 62px;
+    width: 62px;
+    top: 21px;
+}
+.loader-line-wrap:nth-child(4) .loader-line {
+    border-color: hsl(180, 80%, 60%);
+    height: 48px;
+    width: 48px;
+    top: 28px;
+}
+.loader-line-wrap:nth-child(5) .loader-line {
+    border-color: hsl(240, 80%, 60%);
+    height: 34px;
+    width: 34px;
+    top: 35px;
+}
+
+@keyframes spin {
+    0%, 15% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.preloader::backdrop{
+    animation: ease-in-out 2s;
+    opacity: 0%;
+}
+
+.preloader::after{
+    animation: ease-in-out 2s;
+    opacity: 0%;
+}
+
+.preloader::before{
+    animation-delay: 0.5s;
+    opacity: 0%;
+}
+
+
+
+* {
+    padding: 0%;
+    margin: 0%;
+}
+
+body{
+    background-color: #000;
+    z-index: 1;
+}
+.landing-page{
+    position: relative;
+    z-index: 1;  
+    background-color: transparent;
+}
+
+.foot-line{
+    position: absolute;
+    top: 7980px;
+    left: '';
+    background-color: #000;
+}
+.video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    background-color: linear-gradient(linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.4)));
+}
+
+.video video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+.navbar {
+    z-index: 2;
+    background: transparent;
+}
+.links {
+    z-index: 3;
+    background: transparent;
+}
+
+.menu {
+    z-index: 3;
+    background: transparent;
+}
+
+.title{
+    background-color: transparent;
+}
+
+.title h1{
+    background-color: transparent;
+}
+
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(0, 0, 0) ;
+    background-position: center;
+    background-size: cover;
+    overflow-x: hidden;
+    transform-style: preserve-3d;
+} 
+
+.cursor{
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    transition: 0.1s;
+    z-index: 999;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+    mix-blend-mode: difference;
+
+}
+
+.navbar {
+    height: 12%;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    background-color: #000;
+    z-index: 10;
+    padding-top: 20px;
+}
+
+.menu {
+    max-width: 72rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding-left: 4px;
+}
+
+.main {
+    position: relative;
+    width: 100%;
+    left: 0;
+    z-index: 5;
+    overflow: hidden;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+}
+
+.logo{
+        font-size: 30px;
+        font-family: AlphaCentauri;
+        width: 80px;
+        cursor: pointer;
+        position: fixed;
+        top: 10px;
+        left: 20px;
+}
+
+
+.logo h1 {
+    font-size: 20px;
+    font-family: AlphaCentauri;
+    width: 80px;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    left: 20px;
+} 
+.privacy-policy{
+    padding: 40px;
+    color: #fff;
+    align-items: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    position: center;
+}
+
+
+.logo a:hover{
+    font-weight: 50px;
+    transform: rotate3d(-12deg);
+}
+
+.links li:hover ~ .cursor{
+    transform: scale(3);
+}
+.logo span{
+    font-size: small;
+}
+
+nav {
+    padding-left: 600px;
+    padding-bottom: 40px;
+    align-items: right;
+    flex: 1;
+    text-align: right;
+    padding-right: 70px;
+    font-family: "Alphacentauri";
+    background-color: #000;
+}
+
+.links {
+    text-decoration: none;
+    background-color: transparent;  
+}
+  
+.links a:hover {
+    color: rgb(255, 0, 0);
+    font-size: 15px;
+    animation: ease-in-out;
+    font-weight: 200px;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+
+nav ul li a {
+    text-decoration: none;
+    color:#fff;
+    font-size: 13px;
+}
+
+.row{
+    display: flex;
+    height: 80%;
+    align-items: center;   
+    color: #fff;
+    padding-left: 40px;
+    text-decoration: none;
+}
+
+
+h1{
+    font-size: 200px;
+    font-weight: 20px;
+    font-family: AlphaCentauri;
+    padding-left: 40px;
+    background-color: #000;
+}
+
+.subheading{
+    display: flex;
+    height: 80%;
+    align-items: center;   
+    color: #fff;
+    padding-left: 40px;
+}
+
+.col{
+    text-decoration: none;
+    color: #fff;
+    padding-left: 350px;
+}
+
+.col span{
+    font-size: 40px;
+    font-weight: 10px;
+    font-family: AlphaCentauri;
+    text-decoration: none;
+}
+
+.col span a:hover{
+    color: firebrick;
+    animation: 3s ease-in-out;
+}
+.box1{
+    position: absolute;
+    top: 78px;
+    left: 700px;
+    font-size: 1.2rem;
+    padding-bottom: 50px;
+    background: transparent;
+}
+
+.col{
+    flex-basis: 50%;
+    text-decoration: none;
+}
+
+
+.foot-line{
+    align-items: center;
+    color: #fff;
+    font-family: AlphaCentauri;
+    font-size:8px;
+    padding: auto;
+    padding-left: 600px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    padding-right: auto;
+
+}
+
+.heading1{
+    font-size: 20px;
+    color: white;
+    position: center;
+    font-family: AlphaCentauri;
+    padding-left: 400px;
+    padding-top: 42px;
+    padding-bottom: 40px;
+}
+
+.title{
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 250px;
+    color: white;
+    font-family: AlphaCentauri;
+    position: fixed;
+    top: 100px;
+}
+
+.title .span{
+    color:#ff0000;
+    font-weight: 2000px;
+    font-size: 170px;
+}
+
+/*Porshe Tycan*/
+
+.container{
+    position: absolute;
+    top: 202vh;
+    left: 0%;
+    background-color: blur(-20%);
+    height: 110vh;
+    width: 100%;
+
+}
+.container::scroll{
+    position: fixed;
+}
+
+.container::after{
+    position: fixed;
+}
+
+.container .car-name{
+    color: white;
+    position: absolute;
+    top: 59px;
+    left: 770px;
+    font-size: 10px;
+    font-weight: 40px;
+}
+
+.container .car-name h1{
+    font-size: 65px;
+}
+
+.container .card{
+    position: absolute;
+    top: 60px;
+    left: 40px;
+    width: 600px;
+    height: 600px;
+    background: #3d3d3d;
+    border-radius: 20px;
+    border-radius: color(#fff);
+    overflow: hidden;
+    padding: 20px;
+}
+
+.container .card::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#fff,#000);
+    clip-path: circle(300px at 50% -15%);
+    transition: 0.5s ease-in-out;
+
+}
+
+.container .card:hover::before{
+    clip-path: circle(430px at 50% -1%);
+}
+
+.container .card::after{
+    content: 'MX-30';
+    position: absolute;
+    top: 30px;
+    left: 75px;
+    font-size: 10em;
+    font-weight: 800;
+    font-family: AlphaCentauri;
+    color: rgba(255, 255, 255, 0.1);
+    padding-top: 200px;
+    padding-left: 4px;
+}
+
+.container .card .imgBx{
+    position: absolute;
+    background: transparent;
+    top: 50%;
+    left: -50px;
+    transform: translateY(-20%);
+    z-index: 10000;
+    width: 100%;
+    height: 220px;
+    transition: 0.5s;
+}
+.container .card:hover .imgBx{
+    top: 0%;
+    transform:translateY(0%);
+    background: transparent;
+
+}
+
+.container .card .contentBx{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+}
+
+.container .card:hover .contentBx{
+    height: 210px;
+
+} 
+
+.ev-card{
+    background-color: #000;
+    position: static;
+}
+.container .card .contentBx h2{
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: white;
+
+}
+
+.container .card .contentBx .size,
+.container .card .contentBx .size1
+{
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+    align-items: center;
+    opacity: 0;
+}
+
+.container .card .contentBx .size{
+    font-size: 100px;
+    color: white;
+    font-family: AlphaCentauri;
+}
+
+.container .card .contentBx .size1{
+    font-size: 50px;
+    color: white;
+    font-family: AlphaCentauri;
+}
+
+.container .card .contentBx .redirect{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,0,75px);
+    color: #fff;
+    background: #333;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: o.5s;
+    opacity: 0;
+    z-index: 10;
+    size: 300px;
+}
+
+
+
+.container .card:hover .contentBx  .size,
+.container .card:hover .contentBx  .size1,
+.container .card:hover .contentBx  .redirect
+{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+
+.slide-text {
+    position: absolute;
+    top: 30px;
+    left: 690px;
+    z-index: 9;
+    width: 200px;
+    height: 400px;
+    overflow: hidden;
+    opacity: 0.1 !important;
+}
+  
+.slide-text h4 {
+    color: #fff;
+    font-size: 100px;
+    position: relative;
+}
+
+.slide-text h4 span {
+    position: absolute;
+}
+
+.container .information {
+    position: absolute;
+    top: 150px;
+    left: 0px;
+    width: 100%;
+    height: 60vh;
+    font-size: 20px;
+}
+
+.container .information h2{
+    width: 100%;
+    font-size: 25px;
+    color: rgb(14, 200, 247);
+}
+
+.container .information h2:hover{
+    width: 100%;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+}
+
+.container .information h3{
+    width: 100%;
+    color: rgb(4, 248, 126);
+}
+
+.container .information h3:hover{
+    width: 100%;
+    color: rgb(255, 255, 255);
+}
+
+.container .information h3 span{
+    width: 100%;
+    color: tomato;
+}
+
+.container .information span:hover{
+    width: 100%;
+    color: #fff;
+}
+.container .information h1{
+    font-size: 45px;
+    padding-top: 30px;
+}
+.container .information h1 .price{
+    color: deeppink;
+}
+
+.container .information h1 span{
+    font-family:serif ;
+}
+
+
+
+/*Ford mustange Mach-e*/
+
+
+.container2{
+    position: absolute;
+    top: 300vh;
+    left: 0px;
+    background: #000;
+    height: 110vh;
+    width: 100%;
+}
+
+.container2::after{
+    position: fixed;
+}
+
+.container2 .car-name2{
+    color: white;
+    position: absolute;
+    top: 59px;
+    left: 770px;
+    font-size: 10px;
+    font-weight: 40px;
+}
+
+.container2 .car-name2 h1{
+    font-size: 60px;
+}
+
+.container2 .card2{
+    position: absolute;
+    top: 60px;
+    left: 40px;
+    width: 600px;
+    height: 600px;
+    background: #3d3d3d;
+    border-radius: 20px;
+    border-radius: color(#fff);
+    overflow: hidden;
+    padding: 20px;
+}
+
+.container2 .card2::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#fff,#000);
+    clip-path: circle(300px at 50% -15%);
+    transition: 0.5s ease-in-out;
+
+}
+
+.container2 .card2:hover::before{
+    clip-path: circle(430px at 50% -1%);
+}
+
+.container2 .card2::after{
+    content: 'ZS';
+    position: absolute;
+    top: -100px;
+    left: 70px;
+    font-size: 25em;
+    font-weight: 800;
+    font-family: AlphaCentauri;
+    color: rgba(255, 255, 255, 0.1);
+    padding-top: 200px;
+    padding-left: 4px;
+}
+
+.container2 .card2 .imgBx2{
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform: translateY(20%);
+    z-index: 10000;
+    width: 100%;
+    height: 220px;
+    transition: 0.5s;
+}
+.container2 .card2:hover .imgBx2{
+    top: 0%;
+    transform:translateY(25%);
+
+}
+
+.container2 .card2 .contentBx2{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+}
+
+.container2 .card2:hover .contentBx2{
+    height: 210px;
+
+} 
+
+.ev-card2{
+    background-color: #000;
+    position: static;
+}
+.container2 .card2 .contentBx2 h2{
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: white;
+
+}
+
+.container2 .card2 .contentBx2 .redirect2{
+    position: absolute;
+    bottom: 20;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,0,75px);
+    color: #fff;
+    background: #333;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: o.5s;
+    opacity: 0;
+    z-index: 10;
+    size: 300px;
+}
+
+.container2 .card2 .contentBx2 .size,
+.container2 .card2 .contentBx2 .size1
+{
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+    align-items: center;
+    opacity: 0;
+}
+
+.container2 .card2 .contentBx2 .size{
+    font-size: 100px;
+    color: white;
+    font-family: AlphaCentauri;
+}
+
+.container2 .card2 .contentBx2 .size1{
+    font-size: 50px;
+    color: white;
+    font-family: AlphaCentauri;
+}
+
+
+.container2 .card2:hover .contentBx2 .size,
+.container2 .card2:hover .contentBx2  .size1,
+.container2 .card2:hover .contentBx2  .redirect2
+{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+
+.slide-text2 {
+    position: absolute;
+    top: 30px;
+    left: 690px;
+    z-index: 9;
+    width: 200px;
+    height: 400px;
+    overflow: hidden;
+    opacity: 0.2;
+}
+  
+.slide-text2 h4 {
+    color: rgb(255, 255, 255);
+    font-size: 100px;
+    position: relative;
+}
+
+.slide-text2 h4 span {
+    position: absolute;
+}
+
+.container2 .information2 {
+    position: absolute;
+    top: 150px;
+    left: 0px;
+    width: 100%;
+    height: 60vh;
+    font-size: 20px;
+}
+
+.container2 .information2 h2{
+    width: 100%;
+    font-size: 25px;
+    color: rgb(14, 200, 247);
+}
+
+.container2 .information2 h2:hover{
+    width: 100%;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+}
+
+.container2 .information2 h3{
+    width: 100%;
+    color: rgb(4, 248, 126);
+}
+
+.container2 .information2 h3:hover{
+    width: 100%;
+    color: rgb(255, 255, 255);
+}
+
+.container2 .information2 h3 span{
+    width: 100%;
+    color: tomato;
+}
+
+.container2 .information2 span:hover{
+    width: 100%;
+    color: #fff;
+}
+
+.container2 .information2 h1{
+    font-size: 45px;
+    padding-top: 30px;
+}
+
+.container2 .information2 h1 .price2{
+    color: deeppink;
+}
+
+.container2 .information2 h1 span{
+    font-family:serif ;
+}
+
+/*Tesla Roadster*/
+
+
+.container3{
+    position: absolute;
+    top: 100vh;
+    left: 0px;
+    background: #000;
+    height: 110vh;
+    width: 100%;
+}
+
+.container3::after{
+    position: fixed;
+}
+
+.container3 .car-name3{
+    color: white;
+    position: absolute;
+    top: 59px;
+    left: 770px;
+    font-size: 10px;
+    font-weight: 40px;
+    font-family: tesla;
+}
+
+.container3 .car-name3 h1{
+    font-size: 60px;
+    font-family: tesla;
+}
+
+.container3 .card3{
+    position: absolute;
+    top: 60px;
+    left: 40px;
+    width: 600px;
+    height: 600px;
+    background: #3d3d3d;
+    border-radius: 20px;
+    border-radius: color(#fff);
+    overflow: hidden;
+    padding: 20px;
+}
+
+.container3 .card3::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#fff,#000);
+    clip-path: circle(300px at 50% -15%);
+    transition: 0.5s ease-in-out;
+
+}
+
+.container3 .card3:hover::before{
+    clip-path: circle(430px at 50% -1%);
+}
+
+.container3 .card3::after{
+    content: 'Model 3';
+    position: absolute;
+    top: 30px;
+    left: 70px;
+    font-size: 6.8em;
+    font-weight: 800;
+    font-family: tesla;
+    color: rgba(255, 255, 255, 0.1);
+    padding-top: 200px;
+    padding-left: 4px;
+}
+
+.container3 .card3 .imgBx3{
+    position: absolute;
+    top: 50%;
+    left: px;
+    transform: translateY(1%);
+    z-index: 10000;
+    width: 100%;
+    height: 220px;
+    transition: 0.5s;
+}
+.container3 .card3:hover .imgBx3{
+    top: 0%;
+    transform:translateY(0%);
+
+}
+
+.container3 .card3 .contentBx3{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+}
+
+.container3 .card3:hover .contentBx3{
+    height: 210px;
+} 
+
+.ev-card3{
+    background-color: #000;
+    position: static;
+}
+.container3 .card3 .contentBx3 h2{
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: white;
+
+}
+
+.container3 .card3 .contentBx3 .size,
+.container3 .card3 .contentBx3 .size1
+{
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+    align-items: center;
+    opacity: 0;
+}
+
+.container3 .card3 .contentBx3 .size{
+    font-size: 100px;
+    color: white;
+    font-family: AlphaCentauri;
+}
+
+.container3 .card3 .contentBx3 .size1{
+    font-size: 50px;
+    color: white;
+    font-family: AlphaCentauri;
+}
+.container3 .card3 .contentBx3 .redirect3{
+    position: absolute;
+    bottom: 20;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,0,75px);
+    color: #fff;
+    background: #333;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: o.5s;
+    opacity: 0;
+    z-index: 10;
+    size: 300px;
+}
+
+
+.container3 .card3:hover .contentBx3 .size,
+.container3 .card3:hover .contentBx3  .size1,
+.container3 .card3:hover .contentBx3  .redirect3
+{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+
+.slide-text3 {
+    position: absolute;
+    top: 30px;
+    left: 690px;
+    z-index: 9;
+    width: 200px;
+    height: 400px;
+    overflow: hidden;
+    opacity: 0.2;
+}
+  
+.slide-text3 h4 {
+    color: rgb(255, 255, 255);
+    font-size: 100px;
+    position: relative;
+}
+
+.slide-text3 h4 span {
+    position: absolute;
+}
+
+.container3 .information3 {
+    position: absolute;
+    top: 150px;
+    left: 0px;
+    width: 100%;
+    height: 60vh;
+    font-size: 20px;
+}
+
+.container3 .information3 h2{
+    width: 100%;
+    font-size: 25px;
+    color: rgb(14, 200, 247);
+    font-family: AlphaCentauri;
+
+}
+
+.container3 .information3 h2:hover{
+    width: 100%;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+
+}
+
+.container3 .information3 h3{
+    width: 100%;
+    color: rgb(4, 248, 126);
+    font-family: AlphaCentauri;
+
+}
+
+.container3 .information3 h3:hover{
+    width: 100%;
+    color: rgb(255, 255, 255);
+}
+
+.container3 .information3 h3 span{
+    width: 100%;
+    color: tomato;
+    font-family: sans-serif;
+}
+
+.container3 .information3 span:hover{
+    width: 100%;
+    color: #fff;
+}
+
+.container3 .information3 h1{
+    font-size: 45px;
+    padding-top: 30px;
+}
+
+.container3 .information3 h1 .price2{
+    color: deeppink;
+}
+
+.container3 .information3 h1 span{
+    font-family:serif ;
+}
+
+/*Tesla Model X*/
+
+
+.container4{
+    position: absolute;
+    top: 400vh;
+    left: 0px;
+    background: #000;
+    height: 110vh;
+    width: 100%;
+}
+
+.container4::after{
+    position: fixed;
+}
+
+.container4 .car-name4{
+    color: white;
+    position: absolute;
+    top: 59px;
+    left: 770px;
+    font-size: 10px;
+    font-weight: 40px;
+    font-family: tesla;
+}
+
+.container4 .car-name4 h1{
+    font-size: 60px;
+    font-family: tesla;
+}
+
+.container4 .card4{
+    position: absolute;
+    top: 60px;
+    left: 40px;
+    width: 600px;
+    height: 600px;
+    background: #3d3d3d;
+    border-radius: 20px;
+    border-radius: color(#fff);
+    overflow: hidden;
+    padding: 20px;
+}
+
+.container4 .card4::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#fff,#000);
+    clip-path: circle(300px at 50% -15%);
+    transition: 0.5s ease-in-out;
+
+}
+
+.container4 .card4:hover::before{
+    clip-path: circle(430px at 50% -1%);
+}
+
+.container4 .card4::after{
+    content: 'E-UP!';
+    position: absolute;
+    top: 30px;
+    left: 45px;
+    font-size: 11.2em;
+    font-weight: 800;
+    font-family: tesla;
+    color: rgba(255, 255, 255, 0.1);
+    padding-top: 200px;
+    padding-left: 4px;
+}
+
+.container4 .card4 .imgBx4{
+    position: absolute;
+    top: 50%;
+    left: -160px;
+    transform: translateY(-40%);
+    z-index: 10000;
+    width: 100%;
+    height: 220px;
+    transition: 0.5s;
+}
+.container4 .card4:hover .imgBx4{
+    top: 0%;
+    transform:translateY(-20%);
+
+}
+
+.container4 .card4 .contentBx4{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+}
+
+.container4 .card4:hover .contentBx4{
+    height: 210px;
+} 
+
+.ev-card4{
+    background-color: #000;
+    position: static;
+}
+.container4 .card4 .contentBx4 h2{
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: white;
+
+}
+
+.container4 .card4 .contentBx4 .size,
+.container4 .card4 .contentBx4 .size1
+{
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+    align-items: center;
+    opacity: 0;
+}
+
+.container4 .card4 .contentBx4 .size{
+    font-size: 100px;
+    color: white;
+    font-family: AlphaCentauri;
+}
+
+.container4 .card4 .contentBx4 .size1{
+    font-size: 50px;
+    color: white;
+    font-family: AlphaCentauri;
+}
+.container4 .card4 .contentBx4 .redirect4{
+    position: absolute;
+    bottom: 20;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,0,75px);
+    color: #fff;
+    background: #333;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: o.5s;
+    opacity: 0;
+    z-index: 10;
+    size: 300px;
+}
+
+
+.container4 .card4:hover .contentBx4 .size,
+.container4 .card4:hover .contentBx4  .size1,
+.container4 .card4:hover .contentBx4  .redirect4
+{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+
+.slide-text4 {
+    position: absolute;
+    top: 30px;
+    left: 690px;
+    z-index: 9;
+    width: 200px;
+    height: 400px;
+    overflow: hidden;
+    opacity: 0.2;
+}
+  
+.slide-text4 h4 {
+    color: rgb(255, 255, 255);
+    font-size: 100px;
+    position: relative;
+}
+
+.slide-text4 h4 span {
+    position: absolute;
+}
+
+.container4 .information4 {
+    position: absolute;
+    top: 150px;
+    left: 0px;
+    width: 100%;
+    height: 60vh;
+    font-size: 20px;
+}
+
+.container4 .information4 h2{
+    width: 100%;
+    font-size: 25px;
+    color: rgb(14, 200, 247);
+    font-family: AlphaCentauri;
+
+}
+
+.container4 .information4 h2:hover{
+    width: 100%;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+
+}
+
+.container4 .information4 h3{
+    width: 100%;
+    color: rgb(4, 248, 126);
+    font-family: AlphaCentauri;
+
+}
+
+.container4 .information4 h3:hover{
+    width: 100%;
+    color: rgb(255, 255, 255);
+}
+
+.container4 .information4 h3 span{
+    width: 100%;
+    color: tomato;
+    font-family: sans-serif;
+}
+
+.container4 .information4 span:hover{
+    width: 100%;
+    color: #fff;
+}
+
+.containe4 .information4 h1{
+    font-size: 45px;
+    padding-top: 30px;
+}
+
+.container4 .information4 h1 .price2{
+    color: deeppink;
+}
+
+.container4 .information4 h1 span{
+    font-family:serif ;
+}
+
+/*--Tesla MOdel Y--*/
+
+.container5{
+    position: absolute;
+    top: 500vh;
+    left: 0px;
+    background: #000;
+    height: 110vh;
+    width: 100%;
+}
+
+.container5::after{
+    position: fixed;
+}
+
+.container5 .car-name5{
+    color: white;
+    position: absolute;
+    top: 59px;
+    left: 770px;
+    font-size: 10px;
+    font-weight: 40px;
+    font-family: tesla;
+}
+
+.container5 .car-name5 h1{
+    font-size: 60px;
+    font-family: tesla;
+}
+
+.container5 .card5{
+    position: absolute;
+    top: 60px;
+    left: 40px;
+    width: 600px;
+    height: 600px;
+    background: #3d3d3d;
+    border-radius: 20px;
+    border-radius: color(#fff);
+    overflow: hidden;
+    padding: 20px;
+}
+
+.container5 .card5::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#fff,#000);
+    clip-path: circle(300px at 50% -15%);
+    transition: 0.5s ease-in-out;
+
+}
+
+.container5 .card5:hover::before{
+    clip-path: circle(430px at 50% -1%);
+}
+
+.container5 .card5::after{
+    content: 'Model Y';
+    position: absolute;
+    top: 30px;
+    left: 45px;
+    font-size: 6.8em;
+    font-weight: 800;
+    font-family: tesla;
+    color: rgba(255, 255, 255, 0.1);
+    padding-top: 200px;
+    padding-left: 4px;
+}
+
+.container5 .card5 .imgBx5{
+    position: absolute;
+    top: 50px;
+    left: -200px;
+    transform: translateY(0%);
+    z-index: 10000;
+    width: 100%;
+    height: 220px;
+    transition: 0.5s;
+}
+
+.container5 .card5:hover .imgBx5{
+    top: 0%;
+    transform:translateY(0%);
+
+}
+
+.container5 .card5 .contentBx5{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+}
+
+.container5 .card5:hover .contentBx5{
+    height: 210px;
+} 
+
+.ev-card5{
+    background-color: #000;
+    position: static;
+}
+.container5 .card5 .contentBx5 h2{
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: white;
+
+}
+
+.container5 .card5 .contentBx5 .size,
+.container5 .card5 .contentBx5 .size1
+{
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+    align-items: center;
+    opacity: 0;
+}
+
+.container5 .card5 .contentBx5 .size{
+    font-size: 100px;
+    color: white;
+    font-family: AlphaCentauri;
+}
+
+.container5 .card5 .contentBx5 .size1{
+    font-size: 50px;
+    color: white;
+    font-family: AlphaCentauri;
+}
+.container5 .card5 .contentBx5 .redirect5{
+    position: absolute;
+    bottom: 20;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,0,75px);
+    color: #fff;
+    background: #333;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: o.5s;
+    opacity: 0;
+    z-index: 10;
+    size: 300px;
+}
+
+
+.container5 .card5:hover .contentBx5 .size,
+.container5 .card5:hover .contentBx5  .size1,
+.container5 .card5:hover .contentBx5  .redirect5
+{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+
+.slide-text5 {
+    position: absolute;
+    top: 30px;
+    left: 690px;
+    z-index: 9;
+    width: 200px;
+    height: 400px;
+    overflow: hidden;
+    opacity: 0.2;
+}
+  
+.slide-text5 h4 {
+    color: rgb(255, 255, 255);
+    font-size: 100px;
+    position: relative;
+}
+
+.slide-text5 h4 span {
+    position: absolute;
+}
+
+.container5 .information5 {
+    position: absolute;
+    top: 150px;
+    left: 0px;
+    width: 100%;
+    height: 60vh;
+    font-size: 20px;
+}
+
+.container5 .information5 h2{
+    width: 100%;
+    font-size: 25px;
+    color: rgb(14, 200, 247);
+    font-family: AlphaCentauri;
+
+}
+
+.container5 .information5 h2:hover{
+    width: 100%;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+
+}
+
+.container5 .information5 h3{
+    width: 100%;
+    color: rgb(4, 248, 126);
+    font-family: AlphaCentauri;
+
+}
+
+.container5 .information5 h3:hover{
+    width: 100%;
+    color: rgb(255, 255, 255);
+}
+
+.container5 .information5 h3 span{
+    width: 100%;
+    color: tomato;
+    font-family: sans-serif;
+}
+
+.container5 .information5 span:hover{
+    width: 100%;
+    color: #fff;
+}
+
+.containe5 .information5 h1{
+    font-size: 45px;
+    padding-top: 30px;
+}
+
+.container5 .information5 h1 .price2{
+    color: deeppink;
+}
+
+.container5 .information5 h1 span{
+    font-family:serif ;
+}
+
+/*--Jaguar I-Pace--*/
+
+.container6{
+    position: absolute;
+    top: 600vh;
+    left: 0px;
+    background: #000;
+    height: 110vh;
+    width: 100%;
+}
+
+.container6::after{
+    position: fixed;
+}
+
+.container6 .car-name6{
+    color: white;
+    position: absolute;
+    top: 59px;
+    left: 770px;
+    font-size: 10px;
+    font-weight: 40px;
+    font-family: tesla;
+}
+
+.container6 .car-name6 h1{
+    font-size: 60px;
+    font-family: tesla;
+}
+
+.container6 .card6{
+    position: absolute;
+    top: 60px;
+    left: 40px;
+    width: 600px;
+    height: 600px;
+    background: #3d3d3d;
+    border-radius: 20px;
+    border-radius: color(#fff);
+    overflow: hidden;
+    padding: 20px;
+}
+
+.container6 .card6::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#fff,#000);
+    clip-path: circle(300px at 50% -15%);
+    transition: 0.5s ease-in-out;
+
+}
+
+.container6 .card6:hover::before{
+    clip-path: circle(430px at 50% -1%);
+}
+
+.container6 .card6::after{
+    content: 'Ioniq';
+    position: absolute;
+    top: 30px;
+    left: 45px;
+    font-size: 6.8em;
+    font-weight: 800;
+    font-family: tesla;
+    color: rgba(255, 255, 255, 0.1);
+    padding-top: 200px;
+    padding-left: 4px;
+}
+
+.container6 .card6 .imgBx6{
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(20%);
+    z-index: 10000;
+    width: 100%;
+    height: 220px;
+    transition: 0.5s;
+}
+.container6 .card6:hover .imgBx6{
+    top: 0%;
+    transform:translateY(0%);
+
+}
+
+.container6 .card6 .contentBx6{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+}
+
+.container6 .card6:hover .contentBx6{
+    height: 210px;
+} 
+
+.ev-card6{
+    background-color: #000;
+    position: static;
+}
+.container6 .card6 .contentBx6 h2{
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: white;
+
+}
+
+.container6 .card6 .contentBx6 .size,
+.container6 .card6 .contentBx6 .size1
+{
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+    align-items: center;
+    opacity: 0;
+}
+
+.container6 .card6 .contentBx6 .size{
+    font-size: 100px;
+    color: white;
+    font-family: AlphaCentauri;
+}
+
+.container6 .card6 .contentBx6 .size1{
+    font-size: 50px;
+    color: white;
+    font-family: AlphaCentauri;
+}
+.container6 .card6 .contentBx6 .redirect6{
+    position: absolute;
+    bottom: 20;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,0,75px);
+    color: #fff;
+    background: #333;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: o.5s;
+    opacity: 0;
+    z-index: 10;
+    size: 300px;
+}
+
+
+.container6 .card6:hover .contentBx6 .size,
+.container6 .card6:hover .contentBx6  .size1,
+.container6 .card6:hover .contentBx6  .redirect6
+{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+
+.slide-text6 {
+    position: absolute;
+    top: 30px;
+    left: 690px;
+    z-index: 9;
+    width: 200px;
+    height: 400px;
+    overflow: hidden;
+    opacity: 0.2;
+}
+  
+.slide-text6 h4 {
+    color: rgb(255, 255, 255);
+    font-size: 100px;
+    position: relative;
+}
+
+.slide-text6 h4 span {
+    position: absolute;
+}
+
+.container6 .information6 {
+    position: absolute;
+    top: 150px;
+    left: 0px;
+    width: 100%;
+    height: 60vh;
+    font-size: 20px;
+}
+
+.container6 .information6 h2{
+    width: 100%;
+    font-size: 25px;
+    color: rgb(14, 200, 247);
+    font-family: AlphaCentauri;
+
+}
+
+.container6 .information6 h2:hover{
+    width: 100%;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+
+}
+
+.container6 .information6 h3{
+    width: 100%;
+    color: rgb(4, 248, 126);
+    font-family: AlphaCentauri;
+
+}
+
+.container6 .information6 h3:hover{
+    width: 100%;
+    color: rgb(255, 255, 255);
+}
+
+.container6 .information6 h3 span{
+    width: 100%;
+    color: tomato;
+    font-family: sans-serif;
+}
+
+.container6 .information6 span:hover{
+    width: 100%;
+    color: #fff;
+}
+
+.containe6 .information6 h1{
+    font-size: 45px;
+    padding-top: 30px;
+}
+
+.container6 .information6 h1 .price2{
+    color: deeppink;
+}
+
+.container6 .information6 h1 span{
+    font-family:serif ;
+}
+
+/*--Tesla MOdel S--*/
+
+.container5{
+    position: absolute;
+    top: 500vh;
+    left: 0px;
+    background: #000;
+    height: 110vh;
+    width: 100%;
+}
+
+.container5::after{
+    position: fixed;
+}
+
+.container5 .car-name5{
+    color: white;
+    position: absolute;
+    top: 59px;
+    left: 770px;
+    font-size: 10px;
+    font-weight: 40px;
+    font-family: tesla;
+}
+
+.container5 .car-name5 h1{
+    font-size: 60px;
+    font-family: tesla;
+}
+
+.container5 .card5{
+    position: absolute;
+    top: 60px;
+    left: 40px;
+    width: 600px;
+    height: 600px;
+    background: #3d3d3d;
+    border-radius: 20px;
+    border-radius: color(#fff);
+    overflow: hidden;
+    padding: 20px;
+}
+
+.container5 .card5::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#fff,#000);
+    clip-path: circle(300px at 50% -15%);
+    transition: 0.5s ease-in-out;
+
+}
+
+.container5 .card5:hover::before{
+    clip-path: circle(430px at 50% -1%);
+}
+
+.container5 .card5::after{
+    content: 'Model S';
+    position: absolute;
+    top: 30px;
+    left: 45px;
+    font-size: 6.8em;
+    font-weight: 800;
+    font-family: tesla;
+    color: rgba(255, 255, 255, 0.1);
+    padding-top: 200px;
+    padding-left: 4px;
+}
+
+.container5 .card5 .imgBx5{
+    position: absolute;
+    top: 50%;
+    left: -50px;
+    transform: translateY(-25%);
+    z-index: 10000;
+    width: 100%;
+    height: 220px;
+    transition: 0.5s;
+}
+.container5 .card5:hover .imgBx5{
+    top: 0%;
+    transform:translateY(0%);
+
+}
+
+.container5 .card5 .contentBx5{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+}
+
+.container5 .card5:hover .contentBx5{
+    height: 210px;
+} 
+
+.ev-card5{
+    background-color: #000;
+    position: static;
+}
+.container5 .card5 .contentBx5 h2{
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: white;
+
+}
+
+.container5 .card5 .contentBx5 .size,
+.container5 .card5 .contentBx5 .size1
+{
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+    align-items: center;
+    opacity: 0;
+}
+
+.container5 .card5 .contentBx5 .size{
+    font-size: 100px;
+    color: white;
+    font-family: AlphaCentauri;
+}
+
+.container5 .card5 .contentBx5 .size1{
+    font-size: 50px;
+    color: white;
+    font-family: AlphaCentauri;
+}
+.container5 .card5 .contentBx5 .redirect5{
+    position: absolute;
+    bottom: 20;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,0,75px);
+    color: #fff;
+    background: #333;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: o.5s;
+    opacity: 0;
+    z-index: 10;
+    size: 300px;
+}
+
+
+.container5 .card5:hover .contentBx5 .size,
+.container5 .card5:hover .contentBx5  .size1,
+.container5 .card5:hover .contentBx5  .redirect5
+{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+
+.slide-text5 {
+    position: absolute;
+    top: 30px;
+    left: 690px;
+    z-index: 9;
+    width: 200px;
+    height: 400px;
+    overflow: hidden;
+    opacity: 0.2;
+}
+  
+.slide-text5 h4 {
+    color: rgb(255, 255, 255);
+    font-size: 100px;
+    position: relative;
+}
+
+.slide-text5 h4 span {
+    position: absolute;
+}
+
+.container5 .information5 {
+    position: absolute;
+    top: 150px;
+    left: 0px;
+    width: 100%;
+    height: 60vh;
+    font-size: 20px;
+}
+
+.container5 .information5 h2{
+    width: 100%;
+    font-size: 25px;
+    color: rgb(14, 200, 247);
+    font-family: AlphaCentauri;
+
+}
+
+.container5 .information5 h2:hover{
+    width: 100%;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+
+}
+
+.container5 .information5 h3{
+    width: 100%;
+    color: rgb(4, 248, 126);
+    font-family: AlphaCentauri;
+
+}
+
+.container5 .information5 h3:hover{
+    width: 100%;
+    color: rgb(255, 255, 255);
+}
+
+.container5 .information5 h3 span{
+    width: 100%;
+    color: tomato;
+    font-family: sans-serif;
+}
+
+.container5 .information5 span:hover{
+    width: 100%;
+    color: #fff;
+}
+
+.containe5 .information5 h1{
+    font-size: 45px;
+    padding-top: 30px;
+}
+
+.container5 .information5 h1 .price2{
+    color: deeppink;
+}
+
+.container5 .information5 h1 span{
+    font-family:serif ;
+}
+
+/*--Jaguar I-Pace--*/
+
+.container6{
+    position: absolute;
+    top: 600vh;
+    left: 0px;
+    background: #000;
+    height: 110vh;
+    width: 100%;
+}
+
+.container6::after{
+    position: fixed;
+}
+
+.container6 .car-name6{
+    color: white;
+    position: absolute;
+    top: 59px;
+    left: 770px;
+    font-size: 10px;
+    font-weight: 40px;
+    font-family: tesla;
+}
+
+.container6 .car-name6 h1{
+    font-size: 60px;
+    font-family: tesla;
+}
+
+.container6 .card6{
+    position: absolute;
+    top: 60px;
+    left: 40px;
+    width: 600px;
+    height: 600px;
+    background: #3d3d3d;
+    border-radius: 20px;
+    border-radius: color(#fff);
+    overflow: hidden;
+    padding: 20px;
+}
+
+.container6 .card6::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#fff,#000);
+    clip-path: circle(300px at 50% -15%);
+    transition: 0.5s ease-in-out;
+
+}
+
+.container6 .card6:hover::before{
+    clip-path: circle(430px at 50% -1%);
+}
+
+.container6 .card6::after{
+    content: 'I-Pace';
+    position: absolute;
+    top: 30px;
+    left: 120px;
+    font-size: 6.8em;
+    font-weight: 800;
+    font-family: tesla;
+    color: rgba(255, 255, 255, 0.1);
+    padding-top: 200px;
+    padding-left: 4px;
+}
+
+.container6 .card6 .imgBx6{
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-2%);
+    z-index: 10000;
+    width: 100%;
+    height: 220px;
+    transition: 0.5s;
+}
+.container6 .card6:hover .imgBx6{
+    top: 0%;
+    transform:translateY(10%);
+
+}
+
+.container6 .card6 .contentBx6{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+}
+
+.container6 .card6:hover .contentBx6{
+    height: 210px;
+} 
+
+.ev-card6{
+    background-color: #000;
+    position: static;
+}
+.container6 .card6 .contentBx6 h2{
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: white;
+
+}
+
+.container6 .card6 .contentBx6 .size,
+.container6 .card6 .contentBx6 .size1
+{
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+    align-items: center;
+    opacity: 0;
+}
+
+.container6 .card6 .contentBx6 .size{
+    font-size: 100px;
+    color: white;
+    font-family: AlphaCentauri;
+}
+
+.container6 .card6 .contentBx6 .size1{
+    font-size: 50px;
+    color: white;
+    font-family: AlphaCentauri;
+}
+.container6 .card6 .contentBx6 .redirect6{
+    position: absolute;
+    bottom: 20;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,0,75px);
+    color: #fff;
+    background: #333;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: o.5s;
+    opacity: 0;
+    z-index: 10;
+    size: 300px;
+}
+
+
+.container6 .card6:hover .contentBx6 .size,
+.container6 .card6:hover .contentBx6  .size1,
+.container6 .card6:hover .contentBx6  .redirect6
+{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+
+.slide-text6 {
+    position: absolute;
+    top: 30px;
+    left: 690px;
+    z-index: 9;
+    width: 200px;
+    height: 400px;
+    overflow: hidden;
+    opacity: 0.2;
+}
+  
+.slide-text6 h4 {
+    color: rgb(255, 255, 255);
+    font-size: 100px;
+    position: relative;
+}
+
+.slide-text6 h4 span {
+    position: absolute;
+}
+
+.container6 .information6 {
+    position: absolute;
+    top: 150px;
+    left: 0px;
+    width: 100%;
+    height: 60vh;
+    font-size: 20px;
+}
+
+.container6 .information6 h2{
+    width: 100%;
+    font-size: 25px;
+    color: rgb(14, 200, 247);
+    font-family: AlphaCentauri;
+
+}
+
+.container6 .information6 h2:hover{
+    width: 100%;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+
+}
+
+.container6 .information6 h3{
+    width: 100%;
+    color: rgb(4, 248, 126);
+    font-family: AlphaCentauri;
+
+}
+
+.container6 .information6 h3:hover{
+    width: 100%;
+    color: rgb(255, 255, 255);
+}
+
+.container6 .information6 h3 span{
+    width: 100%;
+    color: tomato;
+    font-family: sans-serif;
+}
+
+.container6 .information6 span:hover{
+    width: 100%;
+    color: #fff;
+}
+
+.containe6 .information6 h1{
+    font-size: 45px;
+    padding-top: 30px;
+}
+
+.container6 .information6 h1 .price2{
+    color: deeppink;
+}
+
+.container6 .information6 h1 span{
+    font-family:serif ;
+}
+
+/*--Audi E-Tron--*/
+
+.container7{
+    position: absolute;
+    top: 700vh;
+    left: 0px;
+    background: #000;
+    height: 110vh;
+    width: 100%;
+}
+
+.container7::after{
+    position: fixed;
+}
+
+.container7 .car-name7{
+    color: white;
+    position: absolute;
+    top: 59px;
+    left: 770px;
+    font-size: 10px;
+    font-weight: 40px;
+    font-family: tesla;
+}
+
+.container7 .car-name7 h1{
+    font-size: 60px;
+    font-family: tesla;
+}
+
+.container7 .card7{
+    position: absolute;
+    top: 60px;
+    left: 40px;
+    width: 600px;
+    height: 600px;
+    background: #3d3d3d;
+    border-radius: 20px;
+    border-radius: color(#fff);
+    overflow: hidden;
+    padding: 20px;
+}
+
+.container7 .card7::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#fff,#000);
+    clip-path: circle(300px at 50% -15%);
+    transition: 0.5s ease-in-out;
+
+}
+
+.container7 .card7:hover::before{
+    clip-path: circle(430px at 50% -1%);
+}
+
+.container7 .card7::after{
+    content: 'E-Tron';
+    position: absolute;
+    top: 30px;
+    left: '';
+    font-size: 8.7em;
+    font-weight: 800;
+    font-family: tesla;
+    color: rgba(255, 255, 255, 0.1);
+    padding-top: 200px;
+    padding-left: 4px;
+}
+
+.container7 .card7 .imgBx7{
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-6%);
+    z-index: 10000;
+    width: 100%;
+    height: 220px;
+    transition: 0.5s;
+}
+.container7 .card7:hover .imgBx7{
+    top: 0%;
+    transform:translateY(0%);
+
+}
+
+.container7 .card7 .contentBx7{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+}
+
+.container7 .card7:hover .contentBx7{
+    height: 210px;
+} 
+
+.ev-card7{
+    background-color: #000;
+    position: static;
+}
+.container7 .card7 .contentBx7 h2{
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: white;
+
+}
+
+.container7 .card7 .contentBx7 .size,
+.container7 .card7 .contentBx7 .size1
+{
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+    align-items: center;
+    opacity: 0;
+}
+
+.container7 .card7 .contentBx7 .size{
+    font-size: 100px;
+    color: white;
+    font-family: AlphaCentauri;
+}
+
+.container7 .card7 .contentBx7 .size1{
+    font-size: 50px;
+    color: white;
+    font-family: AlphaCentauri;
+}
+.container7 .card7 .contentBx7 .redirect7{
+    position: absolute;
+    bottom: 20;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,0,75px);
+    color: #fff;
+    background: #333;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: o.5s;
+    opacity: 0;
+    z-index: 10;
+    size: 300px;
+}
+
+
+.container7 .card7:hover .contentBx7 .size,
+.container7 .card7:hover .contentBx7  .size1,
+.container7 .card7:hover .contentBx7 .redirect7
+{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+
+.slide-text7 {
+    position: absolute;
+    top: 30px;
+    left: 690px;
+    z-index: 9;
+    width: 200px;
+    height: 400px;
+    overflow: hidden;
+    opacity: 0.2;
+}
+  
+.slide-text7 h4 {
+    color: rgb(255, 255, 255);
+    font-size: 100px;
+    position: relative;
+}
+
+.slide-text7 h4 span {
+    position: absolute;
+}
+
+.container7 .information7 {
+    position: absolute;
+    top: 150px;
+    left: 0px;
+    width: 100%;
+    height: 60vh;
+    font-size: 20px;
+}
+
+.container7 .information7 h2{
+    width: 100%;
+    font-size: 25px;
+    color: rgb(14, 200, 247);
+    font-family: AlphaCentauri;
+
+}
+
+.container7 .information7 h2:hover{
+    width: 100%;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+
+}
+
+.container7 .information7 h3{
+    width: 100%;
+    color: rgb(4, 248, 126);
+    font-family: AlphaCentauri;
+
+}
+
+.container7 .information7 h3:hover{
+    width: 100%;
+    color: rgb(255, 255, 255);
+}
+
+.container7 .information7 h3 span{
+    width: 100%;
+    color: tomato;
+    font-family: sans-serif;
+}
+
+.container7 .information7 span:hover{
+    width: 100%;
+    color: #fff;
+}
+
+.containe7 .information7 h1{
+    position: absolute;
+    top: 30px;
+    left: -10px;
+    font-size: 45px;
+}
+
+.container7 .information7 h1 .price2{
+    color: deeppink;
+}
+
+.container7 .information7 h1 span{
+    font-family:serif ;
+}
+
+/*--Mercedes-Benz EQ--*/
+
+.container8{
+    position: absolute;
+    top: 800vh;
+    left: 0px;
+    background: #000;
+    height: 110vh;
+    width: 100%;
+}
+
+.container8::after{
+    position: fixed;
+}
+
+.container8 .car-name8{
+    color: white;
+    position: absolute;
+    top: 59px;
+    left: 770px;
+    font-size: 10px;
+    font-weight: 40px;
+    font-family: tesla;
+}
+
+.container8 .car-name8 h1{
+    font-size: 60px;
+    font-family: tesla;
+}
+
+.container8 .card8{
+    position: absolute;
+    top: 60px;
+    left: 40px;
+    width: 600px;
+    height: 600px;
+    background: #3d3d3d;
+    border-radius: 20px;
+    border-radius: color(#fff);
+    overflow: hidden;
+    padding: 20px;
+}
+
+.container8 .card8::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#fff,#000);
+    clip-path: circle(300px at 50% -15%);
+    transition: 0.5s ease-in-out;
+
+}
+
+.container8 .card8:hover::before{
+    clip-path: circle(430px at 50% -1%);
+}
+
+.container8 .card8::after{
+    content: 'EQ';
+    position: absolute;
+    top: 30px;
+    left: 110px;
+    font-size: 15em;
+    font-weight: 800;
+    font-family: tesla;
+    color: rgba(255, 255, 255, 0.1);
+    padding-top: 200px;
+    padding-left: 4px;
+}
+
+.container8 .card8 .imgBx8{
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-6%);
+    z-index: 10000;
+    width: 100%;
+    height: 220px;
+    transition: 0.5s;
+}
+.container8 .card8:hover .imgBx8{
+    top: 0%;
+    transform:translateY(0%);
+
+}
+
+.container8 .card8 .contentBx8{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+}
+
+.container8 .card8:hover .contentBx8{
+    height: 210px;
+} 
+
+.ev-card8{
+    background-color: #000;
+    position: static;
+}
+.container8 .card8 .contentBx8 h2{
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: white;
+
+}
+
+.container8 .card8 .contentBx8 .size,
+.container8 .card8 .contentBx8 .size1
+{
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+    align-items: center;
+    opacity: 0;
+}
+
+.container8 .card8 .contentBx8 .size{
+    font-size: 100px;
+    color: white;
+    font-family: AlphaCentauri;
+}
+
+.container8 .card8 .contentBx8 .size1{
+    font-size: 50px;
+    color: white;
+    font-family: AlphaCentauri;
+}
+.container8 .card8 .contentBx8 .redirect8{
+    position: absolute;
+    bottom: 20;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,0,75px);
+    color: #fff;
+    background: #333;
+    padding: 12px 10px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: o.5s;
+    opacity: 0;
+    z-index: 10;
+    size: 20px;
+}
+
+
+.container8 .card8:hover .contentBx8 .size,
+.container8 .card8:hover .contentBx8  .size1,
+.container8 .card8:hover .contentBx8 .redirect8
+{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+
+.slide-text8 {
+    position: absolute;
+    top: 30px;
+    left: 690px;
+    z-index: 9;
+    width: 200px;
+    height: 400px;
+    overflow: hidden;
+    opacity: 0.2;
+}
+  
+.slide-text8 h4 {
+    color: rgb(255, 255, 255);
+    font-size: 100px;
+    position: relative;
+}
+.slide-text8 h4 span {
+    position: absolute;
+}
+
+.container8 .information8 {
+    position: absolute;
+    top: 150px;
+    left: 0px;
+    width: 100%;
+    height: 60vh;
+    font-size: 20px;
+}
+
+.container8 .information8 h2{
+    width: 100%;
+    font-size: 25px;
+    color: rgb(14, 200, 247);
+    font-family: AlphaCentauri;
+
+}
+
+.container8 .information8 h2:hover{
+    width: 100%;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+
+}
+
+.container8 .information8 h3{
+    width: 100%;
+    color: rgb(4, 248, 126);
+    font-family: AlphaCentauri;
+
+}
+
+.container8 .information8 h3:hover{
+    width: 100%;
+    color: rgb(255, 255, 255);
+}
+
+.container8 .information8 h3 span{
+    width: 100%;
+    color: tomato;
+    font-family: sans-serif;
+}
+
+.container8.information8 span:hover{
+    width: 100%;
+    color: #fff;
+}
+
+.containe8 .information8 h1{
+    position: absolute;
+    top: 30px;
+    left: -10px;
+    font-size: 45px;
+}
+
+.container8 .information8 h1 .price2{
+    color: deeppink;
+}
+
+.container8 .information8 h1 span{
+    font-family:serif ;
+}
+
+/*Polestar 2*/
+
+.container9{
+    position: absolute;
+    top: 900vh;
+    left: 0px;
+    background: #000;
+    height: 110vh;
+    width: 100%;
+}
+
+.container9::after{
+    position: fixed;
+}
+
+.container9 .car-name9{
+    color: white;
+    position: absolute;
+    top: 59px;
+    left: 770px;
+    font-size: 10px;
+    font-weight: 40px;
+    font-family: tesla;
+}
+
+.container9 .car-name9 h1{
+    font-size: 60px;
+    font-family: tesla;
+}
+
+.container9 .card9{
+    position: absolute;
+    top: 60px;
+    left: 40px;
+    width: 600px;
+    height: 600px;
+    background: #3d3d3d;
+    border-radius: 20px;
+    border-radius: color(#fff);
+    overflow: hidden;
+    padding: 20px;
+}
+
+.container9 .card9::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#fff,#000);
+    clip-path: circle(300px at 50% -15%);
+    transition: 0.5s ease-in-out;
+
+}
+
+.container9 .card9:hover::before{
+    clip-path: circle(430px at 50% -1%);
+}
+
+.container9 .card9::after{
+    content: 'Polestar';
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    font-size: 7.5em;
+    font-weight: 800;
+    font-family: tesla;
+    color: rgba(255, 255, 255, 0.1);
+    padding-top: 200px;
+    padding-left: 4px;
+}
+
+.container9 .card9 .imgBx9{
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-6%);
+    z-index: 10000;
+    width: 100%;
+    height: 220px;
+    transition: 0.5s;
+}
+.container9 .card9:hover .imgBx9{
+    top: 0%;
+    transform:translateY(0%);
+
+}
+
+.container9 .card9 .contentBx9{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+}
+
+.container9 .card9:hover .contentBx9{
+    height: 200px;
+} 
+
+.ev-card9{
+    background-color: #000;
+    position: static;
+}
+.container9 .card9 .contentBx9 h2{
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: white;
+
+}
+
+.container9 .card9 .contentBx9 .size,
+.container9 .card9 .contentBx9 .size1
+{
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+    align-items: center;
+    opacity: 0;
+}
+
+.container9 .card9 .contentBx9 .size{
+    font-size: 100px;
+    color: white;
+    font-family: AlphaCentauri;
+}
+
+.container9 .card9 .contentBx9 .size1{
+    font-size: 50px;
+    color: white;
+    font-family: AlphaCentauri;
+}
+
+.container9 .card9 .contentBx9 .redirect9{
+    position: absolute;
+    bottom: 20;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,0,75px);
+    color: #fff;
+    background: #333;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: o.5s;
+    opacity: 0;
+    z-index: 10;
+    size: 300px;
+}
+
+
+.container9 .card9:hover .contentBx9 .size,
+.container9 .card9:hover .contentBx9  .size1,
+.container9 .card9:hover .contentBx9  .redirect9
+{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+
+.slide-text9 {
+    position: absolute;
+    top: 30px;
+    left: 690px;
+    z-index: 9;
+    width: 200px;
+    height: 400px;
+    overflow: hidden;
+    opacity: 0.2;
+}
+  
+.slide-text9 h4 {
+    color: rgb(255, 255, 255);
+    font-size: 100px;
+    position: relative;
+}
+
+.slide-text9 h4 span {
+    position: absolute;
+}
+
+.container9 .information9 {
+    position: absolute;
+    top: 150px;
+    left: 0px;
+    width: 100%;
+    height: 60vh;
+    font-size: 20px;
+}
+
+.container9 .information9 h2{
+    width: 100%;
+    font-size: 25px;
+    color: rgb(14, 200, 247);
+    font-family: AlphaCentauri;
+
+}
+
+.container9 .information9 h2:hover{
+    width: 100%;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+
+}
+
+.container9 .information9 h3{
+    width: 100%;
+    color: rgb(4, 248, 126);
+    font-family: AlphaCentauri;
+
+}
+
+.container9 .information9 h3:hover{
+    width: 100%;
+    color: rgb(255, 255, 255);
+}
+
+.container9 .information9 h3 span{
+    width: 100%;
+    color: tomato;
+    font-family: sans-serif;
+}
+
+.container9 .information9 span:hover{
+    width: 100%;
+    color: #fff;
+}
+
+.containe9 .information9 h1{
+    position: absolute;
+    top: 30px;
+    left: -10px;
+    font-size: 45px;
+}
+
+.container9 .information9 h1 .price2{
+    color: deeppink;
+}
+
+.container9 .information9 h1 span{
+    font-family:serif ;
+}
+
+/*--Mercedes-Benz EQ--*/
+
+.container8{
+    position: absolute;
+    top: 800vh;
+    left: 0px;
+    background: #000;
+    height: 110vh;
+    width: 100%;
+}
+
+.container8::after{
+    position: fixed;
+}
+
+.container8 .car-name8{
+    color: white;
+    position: absolute;
+    top: 59px;
+    left: 770px;
+    font-size: 10px;
+    font-weight: 40px;
+    font-family: tesla;
+}
+
+.container8 .car-name8 h1{
+    font-size: 60px;
+    font-family: tesla;
+}
+
+.container8 .card8{
+    position: absolute;
+    top: 60px;
+    left: 40px;
+    width: 600px;
+    height: 600px;
+    background: #3d3d3d;
+    border-radius: 20px;
+    border-radius: color(#fff);
+    overflow: hidden;
+    padding: 20px;
+}
+
+.container8 .card8::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#fff,#000);
+    clip-path: circle(300px at 50% -15%);
+    transition: 0.5s ease-in-out;
+
+}
+
+.container8 .card8:hover::before{
+    clip-path: circle(430px at 50% -1%);
+}
+
+.container8 .card8::after{
+    content: 'EQ';
+    position: absolute;
+    top: 30px;
+    left: 110px;
+    font-size: 15em;
+    font-weight: 800;
+    font-family: tesla;
+    color: rgba(255, 255, 255, 0.1);
+    padding-top: 200px;
+    padding-left: 4px;
+}
+
+.container8 .card8 .imgBx8{
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-6%);
+    z-index: 10000;
+    width: 100%;
+    height: 220px;
+    transition: 0.5s;
+}
+.container8 .card8:hover .imgBx8{
+    top: 0%;
+    transform:translateY(0%);
+
+}
+
+.container8 .card8 .contentBx8{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+}
+
+.container8 .card8:hover .contentBx8{
+    height: 210px;
+} 
+
+.ev-card8{
+    background-color: #000;
+    position: static;
+}
+.container8 .card8 .contentBx8 h2{
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: white;
+
+}
+
+.container8 .card8 .contentBx8 .size,
+.container8 .card8 .contentBx8 .size1
+{
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+    align-items: center;
+    opacity: 0;
+}
+
+.container8 .card8 .contentBx8 .size{
+    font-size: 100px;
+    color: white;
+    font-family: AlphaCentauri;
+}
+
+.container8 .card8 .contentBx8 .size1{
+    font-size: 50px;
+    color: white;
+    font-family: AlphaCentauri;
+}
+.container8 .card8 .contentBx8 .redirect8{
+    position: absolute;
+    bottom: 20;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,0,75px);
+    color: #fff;
+    background: #333;
+    padding: 12px 10px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: o.5s;
+    opacity: 0;
+    z-index: 10;
+    size: 20px;
+}
+
+
+.container8 .card8:hover .contentBx8 .size,
+.container8 .card8:hover .contentBx8  .size1,
+.container8 .card8:hover .contentBx8 .redirect8
+{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+
+.slide-text8 {
+    position: absolute;
+    top: 30px;
+    left: 690px;
+    z-index: 9;
+    width: 200px;
+    height: 400px;
+    overflow: hidden;
+    opacity: 0.2;
+}
+  
+.slide-text8 h4 {
+    color: rgb(255, 255, 255);
+    font-size: 100px;
+    position: relative;
+}
+.slide-text8 h4 span {
+    position: absolute;
+}
+
+.container8 .information8 {
+    position: absolute;
+    top: 150px;
+    left: 0px;
+    width: 100%;
+    height: 60vh;
+    font-size: 20px;
+}
+
+.container8 .information8 h2{
+    width: 100%;
+    font-size: 25px;
+    color: rgb(14, 200, 247);
+    font-family: AlphaCentauri;
+
+}
+
+.container8 .information8 h2:hover{
+    width: 100%;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+
+}
+
+.container8 .information8 h3{
+    width: 100%;
+    color: rgb(4, 248, 126);
+    font-family: AlphaCentauri;
+
+}
+
+.container8 .information8 h3:hover{
+    width: 100%;
+    color: rgb(255, 255, 255);
+}
+
+.container8 .information8 h3 span{
+    width: 100%;
+    color: tomato;
+    font-family: sans-serif;
+}
+
+.container8.information8 span:hover{
+    width: 100%;
+    color: #fff;
+}
+
+.containe8 .information8 h1{
+    position: absolute;
+    top: 30px;
+    left: -10px;
+    font-size: 45px;
+}
+
+.container8 .information8 h1 .price2{
+    color: deeppink;
+}
+
+.container8 .information8 h1 span{
+    font-family:serif ;
+}
+
+/*Polestar 2*/
+
+.container10{
+    position: absolute;
+    top: 1000vh;
+    left: 0px;
+    background: #000;
+    height: 110vh;
+    width: 100%;
+}
+
+.container10::after{
+    position: fixed;
+}
+
+.container10 .car-name10{
+    color: white;
+    position: absolute;
+    top: 59px;
+    left: 770px;
+    font-size: 10px;
+    font-weight: 40px;
+    font-family: AlphaCentauri;
+}
+
+.container10 .car-name10 h2{
+    position: relative;
+    text-align: justify;
+
+}
+
+
+.container10 .car-name10 h1{
+    font-size: 60px;
+    font-family: tesla;
+}
+
+.container10 .card10{
+    position: absolute;
+    top: 60px;
+    left: 40px;
+    width: 600px;
+    height: 600px;
+    background: #3d3d3d;
+    border-radius: 20px;
+    border-radius: color(#fff);
+    overflow: hidden;
+    padding: 20px;
+}
+
+.container10 .card10::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#fff,#000);
+    clip-path: circle(300px at 50% -15%);
+    transition: 0.5s ease-in-out;
+
+}
+
+.container10 .card10:hover::before{
+    clip-path: circle(430px at 50% -1%);
+}
+
+.container10 .card10::after{
+    content: 'EC6';
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    font-size: 16.7em;
+    font-weight: 800;
+    font-family: tesla;
+    color: rgba(255, 255, 255, 0.1);
+    padding-top: 200px;
+    padding-left: 4px;
+}
+
+.container10 .card10 .imgBx10{
+    position: absolute;
+    top: 25%;
+    left: -15%;
+    transform: translateY(-6%);
+    z-index: 10000;
+    width: 100%;
+    height: 220px;
+    transition: 0.5s;
+}
+.container10 .card10:hover .imgBx10{
+    top: 0%;
+    transform:translateY(-20%);
+
+}
+
+.container10 .card10 .contentBx10{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+}
+
+.container10 .card10:hover .contentBx10{
+    height: 200px;
+} 
+
+.ev-card10{
+    background-color: #000;
+    position: static;
+}
+.container10 .card10 .contentBx10 h2{
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: white;
+
+}
+
+.container10 .card10 .contentBx10 .size,
+.container10 .card10 .contentBx10 .size1
+{
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+    align-items: center;
+    opacity: 0;
+}
+
+.container10 .card10 .contentBx10 .size{
+    font-size: 100px;
+    color: white;
+    font-family: AlphaCentauri;
+}
+
+.container10 .card10 .contentBx10 .size1{
+    font-size: 50px;
+    color: white;
+    font-family: AlphaCentauri;
+}
+
+.container10 .card10 .contentBx10 .redirect10{
+    position: absolute;
+    bottom: 20;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,0,75px);
+    color: #fff;
+    background: #333;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: o.5s;
+    opacity: 0;
+    z-index: 10;
+    size: 300px;
+}
+
+
+.container10 .card10:hover .contentBx10 .size,
+.container10 .card10:hover .contentBx10  .size1,
+.container10 .card10:hover .contentBx10  .redirect10
+{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+
+.slide-text10 {
+    position: absolute;
+    top: 30px;
+    left: 690px;
+    z-index: 9;
+    width: 200px;
+    height: 400px;
+    overflow: hidden;
+    opacity: 0.2;
+}
+  
+.slide-text10 h4 {
+    color: rgb(255, 255, 255);
+    font-size: 100px;
+    position: relative;
+}
+
+.slide-text10 h4 span {
+    position: absolute;
+}
+
+.container10 .information10 {
+    position: absolute;
+    top: 150px;
+    left: 0px;
+    width: 100%;
+    height: 60vh;
+    font-size: 20px;
+}
+
+.container10 .information10 h2{
+    width: 100%;
+    font-size: 25px;
+    color: rgb(14, 200, 247);
+    font-family: AlphaCentauri;
+}
+
+.container10 .information10 h2:hover{
+    width: 100%;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+
+}
+
+.container10 .information10 h3{
+    width: 100%;
+    color: rgb(4, 248, 126);
+    font-family: AlphaCentauri;
+
+}
+
+.container10 .information10 h3:hover{
+    width: 100%;
+    color: rgb(255, 255, 255);
+}
+
+.container10 .information10 h3 span{
+    width: 100%;
+    color: tomato;
+    font-family: sans-serif;
+}
+
+.container10 .information10 span:hover{
+    width: 100%;
+    color: #fff;
+}
+
+.containe10 .information10 h1{
+    position: absolute;
+    top: 30px;
+    left: -10px;
+    font-size: 45px;
+}
+
+.container10 .information10 h1 .price2{
+    color: deeppink;
+}
+
+.container10 .information10 h1 span{
+    font-family:serif ;
+}

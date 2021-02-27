@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVeryone</title>
+    <link rel="stylesheet" href="/style.css"/>
+    <link rel="shortcut icon" href="/images/logo.png">
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart'],
+        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'Percent'],
+          ['Germany', 1.97],
+          ['United States', 2.09],
+          ['Brazil', 0.73],
+          ['Canada', 2.22],
+          ['France', 2.10],
+          ['Russia', 0.14],
+          ['United Kingdom', 2.53],
+          ['India', 0.84 ],
+          ['IRELAND', 1.57],
+          ['Norway', 49.14],
+          ['Iceland', 19.14],
+          ['Sweden', 8.01],
+          ['Netherlands', 6.69],
+          ['Finland', 4.74],
+          ['China', 4.44],
+          ['Portugal', 3.44],
+          ['Switzerland', 3.18],
+          ['Austria', 5.54],
+          ['Belgium', 2.43],
+          ['Denmark', 2.14],
+          ['South Korea', 2.05],
+        ]);
+
+        var options = {};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
+
+
+</head>
+<body>
+    <section>
+        <div class="preloader">
+            <div class="counter">0</div> 
+    </div>
+
+    </section>
+  
+
+
+    <div class="video">
+        <video autoplay muted loop>
+            <source src="/images/background-video.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+
+    <section class="landing-page" id="landing-page">
+            <div class="navbar">
+                <div class="menu">
+                   <div class="logo" id="logo"></div>
+                  <h3 class="logo" id="logo">EV<span>eryone</span></h3>
+                  <div class="links">
+                  <nav>
+                    <ul>
+                       <li><a href="/contact/contact.html">contact</a></li>
+                       <li><a href="/privacy policy/privacy.html">Privacy Policy</a></li>
+                       <div class="cursor"></div>
+                    </ul>
+                    <script>
+                        const cursor = document.querySelector('.cursor');
+                        document.addEventListener('mousemove', (e) => {
+                            cursor.style.left = e.pageX + 'px';
+                            cursor.style.top = e.pageY + 'px';
+                        })
+                    </script>
+                  </nav>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+                <div class="row">
+                    <div class="col">
+                        <ul class="enviroment" id="enviroment">
+                            <h1>E<span>nvironmental</span></h1>
+                        </ul id="vision">
+                        <h1>V<span class="ision">ision</span></h1>
+                    </div>
+            <div class="col1">
+                <div class="box box1">
+                    <h5>Employment</h5>
+                    <a class="Exciting-variants" id="Exciting-variants" href="/Employment Vacancies/Employment Vacancies.html">Learn more</a>  
+                </div>
+                <div class="box box2">
+                    <h5>Everlasting Voltage</h5>
+                    <a class="Exciting-variants" id="Exciting-variants" href="/Everlasting voltage/Everlasting voltage.html">Learn more</a>  
+                </div>
+                <div class="box box3">
+                    <h5>Exciting Variants</h5>
+                    <a class="Exciting-variants" id="Exciting-variants" href="/Exciting Variants/exciting variants.html">Learn more</a>  
+                </div>
+                <div class="box box4">
+                    <h5>Everyday Value</h5>
+                    <a class="Exciting-variants" id="Exciting-variants" href="/Everyday Value/Everyday Value.html">Learn more</a>     
+                </div>
+             </div>
+            </div>
+         </div>
+    </section>
+
+    <section class="map" id="map">
+        <div class="heading1">
+            <h2>Percentage of EV's in each Country(2019)</h2>
+        </div>
+        <div id="regions_div" style="width: 1519px; height: 1000px;"></div>
+    </section>
+
+
+    <section>
+        <div class="barchart_values" id="barchart_values" style="width: max-content; height: 300px;"></div>
+    </section>
+
+    <!--Profile-->
+    <section>
+        <div class="wrapper">
+            <h1>Meet the Team</h1>
+            <div class="container">
+                <div class="profile-img"><img src="/profile-image/shivdeep.png" ></div>
+                <h2>Shivdeep Rana</h2>
+                <p>I am a 14 years old boy who has a love towards singing and writing. I am also good at skating and speaking skills.</p>
+                <p class="social">
+                </p>
+            </div>
+            <div class="container">
+                <div class="profile-img"><img src="/profile-image/dhairya.png"></div>
+                <h2>Dhairya Bhatt</h2>
+                <p>At 13 years old, I have already used my love of tech to develop many projects. I enjoy my life in full. You could describe me as a person who can get things done.</p>
+                <p class="social">
+                    <a class="youtube" href="https://www.youtube.com/c/DhairyaBhatt"><img src="/profile-image/favicon_96.png" width="50px" height="50px"></a>
+                    <a class="youtube" href="https://www.mathspublishing.com"><img src="/profile-image//website.png"  width="40px" height="40px"></a>
+                    <a class="youtube" href="https://ted-bhavnagar.wixsite.com/coeus-club"><img src="/profile-image//website.png"  width="40px" height="40px"></a>
+                    <a class="youtube" href="https://dhairya-bhatt.wixsite.com/i-qr"><img src="/profile-image//website.png"  width="40px" height="40px"></a>
+                </p>
+            </div>
+            <div class="container">
+                <div class="profile-img"><img src="/profile-image/rudraraj.png"></div>
+                <h2>Rudraraj Jadeja</h2>
+                <p>I am 13 years old a game developer and interested in science, Maths and Technology and also a football player. And I like to make game using coding in unity engine.</p>
+                <p class="social">
+                    <a class="youtube" href="https://www.youtube.com/channel/UCLeTRb4qgUsJfmR53MLeMeQ"><img src="/profile-image/favicon_96.png" width="50px" height="50px"></a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer-of-landing-page">
+        <div class="foot-line" id="foot-line">
+            <h2>| Made with ♡ by Amarjyoti Saraswati Vidhyalaya for Minchamp Competition |</h2>
+        </div>
+    </section>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script type="text/javascript">
+       function counter(){
+           var count = setInterval(function(){
+               var c = parseInt($('.counter').text());
+               $('.counter').text((++c).toString());
+               if (c == 100){
+                   clearInterval(count);
+                   $('.counter').addClass('hide')
+                   $('.preloader').addClass('hide')
+                   $('.preloader').addClass('active')
+               }
+
+           },10)
+       }
+        counter()
+    </script>
+        
+
+    <script src="/js/tilt.jquery.js"></script>
+
+    
+    <script src="/js/animations.js"></script>
+
+    <script>
+     const tilt = $('.box , .container').tilt({scale:1.01});
+    </script>
+
+</body>
+</html>
