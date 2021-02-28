@@ -204,7 +204,6 @@ body{
         background: transparent;
 }
 
-
 .logo h1 {
     font-size: 20px;
     font-family: AlphaCentauri;
@@ -319,6 +318,11 @@ nav ul li a {
 
 .box1{
     background-image: url(front-images/employment-vacancies.png);
+}
+
+.col1 .box1 h5{
+    font-size: 18px;
+    font-display: bold;
 }
 .box2{
     background-image: url(front-images/everlasting-voltage.png);
