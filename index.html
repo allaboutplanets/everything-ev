@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EVeryone</title>
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
     <meta name="description" content="Learn everything about the EV world">
     <meta name="keywords" content="EV ,Electric Vehicles ,all about ev ,all about electric vehicles ,developed by DhairyaBHatt ,Dhairya Bhatt EV ,Electric Vehicles ,all about ev ,all about electric vehicles ,developed by DhairyaBHatt ,Dhairya Bhatt EV ,Electric Vehicles ,all about ev ,all about electric vehicles ,developed by DhairyaBHatt ,Dhairya Bhatt EV ,Electric Vehicles ,all about ev ,all about electric vehicles ,developed by DhairyaBHatt ,Dhairya Bhatt EV ,Electric Vehicles ,all about ev ,all about electric vehicles ,developed by DhairyaBHatt ,Dhairya Bhatt EV ,Electric Vehicles ,all about ev ,all about electric vehicles ,developed by DhairyaBHatt ,Dhairya Bhatt EV ,Electric Vehicles ,all about ev ,all about electric vehicles ,developed by DhairyaBHatt ,Dhairya Bhatt ,EV ,Electric Vehicles ,all about ev ,all about electric vehicles ,developed by DhairyaBHatt ,Dhairya Bhatt ,EV ,Electric Vehicles ,all about ev ,all about electric vehicles ,developed by DhairyaBHatt ,Dhairya Bhatt ,EV ,Electric Vehicles ,all about ev ,all about electric vehicles ,developed by DhairyaBHatt ,Dhairya Bhatt ,EV ,Electric Vehicles ,all about ev ,all about electric vehicles ,developed by DhairyaBHatt ,Dhairya Bhatt ,EV ,Electric Vehicles ,all about ev ,all about electric vehicles ,developed by DhairyaBHatt ,Dhairya Bhatt ,EV ,Electric Vehicles ,all about ev ,all about electric vehicles ,developed by DhairyaBHatt ,Dhairya Bhatt ,EV ,Electric Vehicles ,all about ev ,all about electric vehicles ,developed by DhairyaBHatt ,Dhairya Bhatt ,EV ,Electric Vehicles ,all about ev ,all about electric vehicles ,developed by DhairyaBHatt ,Dhairya Bhatt ,EV ,Electric Vehicles ,all about ev ,all about electric vehicles ,developed by DhairyaBHatt ,Dhairya Bhatt ,EV ,Electric Vehicles ,all about ev ,all about electric vehicles ,developed by DhairyaBHatt ,Dhairya Bhatt EV ,Electric Vehicles ,all about ev ,all about electric vehicles ,developed by DhairyaBHatt ,Dhairya Bhatt EV ,Electric Vehicles ,all about ev ,all about electric vehicles ,developed by DhairyaBHatt ,Dhairya Bhatt EV ,Electric Vehicles ,all about ev ,all about electric vehicles ,developed by DhairyaBHatt ,Dhairya Bhatt EV ,Electric Vehicles ,all about ev ,all about electric vehicles ,developed by DhairyaBHatt ,Dhairya Bhatt EV ,Electric Vehicles ,all about ev ,all about electric vehicles ,developed by DhairyaBHatt ,Dhairya Bhatt ,EV ,Electric Vehicles ,all about ev ,all about electric vehicles ,developed by DhairyaBHatt ,Dhairya Bhatt ">
     <link name="canonical" href="https://everythingev.info">
@@ -56,8 +57,53 @@
     </script>
 
 
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load('current', {
+    'packages':['geochart'],
+    'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+  });
+  google.charts.setOnLoadCallback(drawRegionsMap);
+
+  function drawRegionsMap() {
+    var data = google.visualization.arrayToDataTable([
+      ['Country', 'Percent'],
+      ['Germany', 1.97],
+      ['United States', 2.09],
+      ['Brazil', 0.73],
+      ['Canada', 2.22],
+      ['France', 2.10],
+      ['Russia', 0.14],
+      ['United Kingdom', 2.53],
+      ['India', 0.84 ],
+      ['IRELAND', 1.57],
+      ['Norway', 49.14],
+      ['Iceland', 19.14],
+      ['Sweden', 8.01],
+      ['Netherlands', 6.69],
+      ['Finland', 4.74],
+      ['China', 4.44],
+      ['Portugal', 3.44],
+      ['Switzerland', 3.18],
+      ['Austria', 5.54],
+      ['Belgium', 2.43],
+      ['Denmark', 2.14],
+      ['South Korea', 2.05],
+    ]);
+
+    var options = {};
+
+    var chart = new google.visualization.GeoChart(document.getElementById('mobile'));
+
+    chart.draw(data, options);
+  }
+</script>
+
+
 
 </head>
+
+<!------------------------------------------------------------Body----------------------------------------------->
 <body>
     <section>
         <div class="preloader">
@@ -106,7 +152,7 @@
                         <ul class="enviroment" id="enviroment">
                             <h1>E<span>nvironmental</span></h1>
                         </ul id="vision">
-                        <h1>V<span class="ision">ision</span></h1>
+                        <h1>V<span class="ison">ision</span></h1>
                     </div>
             <div class="col1">
                 <div class="box box1">
@@ -134,26 +180,27 @@
         <div class="heading1">
             <h2>Percentage of EV's in each Country(2019)</h2>
         </div>
-        <div id="regions_div" style="width: 1519px; height: 1000px;"></div>
+        <div class="regions_div" id="regions_div" style="width: 1519px; height: 1000px;"></div>
+    <div class="mobile" id="mobile" style="width: fit-content; height: fit-content;"></div>
     </section>
 
 
     <section>
-        <div class="barchart_values" id="barchart_values" style="width: max-content; height: 300px;"></div>
+        <div class="barchart_values" id="barchart_values" style="width: -content; height: 300px;"></div>
     </section>
 
     <!--Profile-->
     <section>
         <div class="wrapper">
             <h1>Meet the Team</h1>
-            <div class="container">
+            <div class="container con1">
                 <div class="profile-img"><img src="images/profile-image/shivdeep.png" ></div>
                 <h2>Shivdeep Rana</h2>
                 <p>I am a 14 years old boy who has a love towards singing and writing. I am also good at skating and speaking skills.</p>
                 <p class="social">
                 </p>
             </div>
-            <div class="container">
+            <div class="container con2">
                 <div class="profile-img"><img src="images/profile-image/dhairya.png"></div>
                 <h2>Dhairya Bhatt</h2>
                 <p>At 13 years old, I have already used my love of tech to develop many projects. I enjoy my life in full. You could describe me as a person who can get things done.</p>
@@ -164,7 +211,7 @@
                     <a class="youtube" href="https://dhairya-bhatt.wixsite.com/i-qr"><img src="images/profile-image//website.png"  width="40px" height="40px"></a>
                 </p>
             </div>
-            <div class="container">
+            <div class="container con3">
                 <div class="profile-img"><img src="images/profile-image/rudraraj.png"></div>
                 <h2>Rudraraj Jadeja</h2>
                 <p>I am 13 years old a game developer and interested in science, Maths and Technology and also a football player. And I like to make game using coding in unity engine.</p>

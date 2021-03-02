@@ -359,19 +359,17 @@ nav ul li a {
 
 .foot-line{
     position: absolute;
-    top: 348vh;
+    top: 350vh;
     align-items: center;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    padding-left: 500px;
     color: #fff;
     font-family: AlphaCentauri;
     font-size:8px;
     padding: auto;
-    padding-left: 525px;
-    padding-right: 400px;
     background-color: transparent;
-    padding-top: 40px;
-    padding-bottom: 20px;
-    padding-right: auto;
-
 }
 
 .heading1{
@@ -442,6 +440,7 @@ ul{
 
 .wrapper{
     position: absolute;
+    display: inline-block;
     top: 260vh;
     left: 200px;
     width: 1152px;
@@ -451,6 +450,7 @@ ul{
     display: -o-flex;
     display: flex;
     justify-content: space-between;
+    box-sizing: border-box;
     align-items: center;
     min-height: 100vh;
     margin: 0 auto;
@@ -465,24 +465,25 @@ ul{
     object-fit: cover;
 }   
 .container{
-    width: 80vh;
-    height: 70vh;
+    width: 3000px;
+    height: 550px;
     display: inline-block;
     border-radius: 10px;
     padding: 25px;
     align-items: center;
     box-sizing: border-box;
-    margin: 10px 10px;
-    background-color: #ffffff1a;
+    cursor: pointer;
+    margin: 15px 15px;
+    background-color: #ffffff56;
     background-position: center;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(-20%);
     font-family: AlphaCentauri;
-    border: 3px #fcfcfc2a;
+    border: white;
     border-style: solid;
 }
 
 @font-face{
-    src: url(/fonts/OpenDyslexicAlta-Bold.otf);
+    src: url(fonts/OpenDyslexicAlta-Bold.otf);
     font-family: custom;
 }
 
@@ -509,6 +510,12 @@ ul{
     height: 10px;
     padding-left: 100px;
 }
+
+.regions_div{
+    position: relative;
+    width: 1519px;
+    height: 1000px;
+}
 .wrapper h1{
     position: absolute;
     top: 0vh;
@@ -521,4 +528,94 @@ ul{
     display: flex;
     font-family: custom;
     background: transparent;
+}
+.mobile{
+    opacity: 0;
+    visibility: hidden;
+}
+
+/*Reaponsive*/
+
+@media (max-width : 1440px){
+    .col{
+        position: absolute;
+        top: 220px;
+        left: -20px;
+
+    }
+    .col1{
+        position: absolute;
+        top: 700px;
+        left: -120px;
+    }
+    .ision{
+        position: absolute;
+        opacity: 1;
+        color: #ff0000;
+    }
+    .col1 .box .Exciting-variants{
+        opacity: 1;
+    }
+    .map{
+        position: absolute;
+        top: 1900px;
+    }
+    .map .heading1 {
+        position: relative;
+        font-size: 13px;
+        padding-top: 70px;
+        left: -390px;
+    }
+    .wrapper h1{
+        font-size: 50px;
+    }
+    .regions_div{
+        opacity: 0;
+        visibility: hidden;
+    }
+    .mobile{
+        position: absolute;
+        top: 20vh;
+        opacity: 1;
+        visibility: visible;
+    }
+    .wrapper{
+        position: absolute;
+        top: 2400px;
+        left: 20px;
+    }
+    .container{
+        position: absolute;
+        max-width: 400px;
+        display: inline-block;
+        box-sizing: border-box;
+    }
+    .con1{
+        position: absolute;
+        top: 650px;
+        height: 400px;
+    }
+    .con3{
+        position: absolute;
+        top: 1100px;
+        height: 505px;
+    }
+    .foot-line{
+        position: absolute;
+        top: 585vh;
+        padding-left: 0px;
+    }
+    .counter{
+        padding-top: 100px;
+    }
+    .preloader:before{
+        content: 'EV is loading..';
+        position: absolute;
+        top: 250px;
+        font-size: 2.2em;
+        font-weight: 900;
+        text-transform: uppercase;
+        font-family: AlphaCentauri;
+        color: #fff;
+    }
 }
